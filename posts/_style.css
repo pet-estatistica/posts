@@ -15,10 +15,12 @@ tt, code, pre {
     font-family: "Inconsolata", "Andale Mono", monospace;
 }
 
+/*
 p {
     text-indent: 1em;
     text-align: justify;
 }
+*/
 
 img {
     max-width: 100% !important;
@@ -85,8 +87,3 @@ pre:not([class]), code {
     background-color: #D4D4D4;
     font-size: 15px;
 }
-<<<<<<< HEAD
-
-/*------------------------------------------- */
-=======
->>>>>>> e9fcd1add21fba57f7d96748722f35e6fcfaa20c
