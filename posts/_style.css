@@ -1,0 +1,91 @@
+/*------------------------------------------- */
+
+body, td, caption {
+    font-family: "Palatino Linotype", Palatino, serif;
+    background-color: white;
+    font-size: 16px;
+}
+
+body {
+    margin: auto;
+    width: 750px;
+}
+
+tt, code, pre {
+    font-family: "Inconsolata", "Andale Mono", monospace;
+}
+
+p {
+    text-indent: 1em;
+    text-align: justify;
+}
+
+img {
+    max-width: 100% !important;
+    display: block;
+    margin: auto;
+}
+
+.MathJax {
+    font-size: 50% !important; /* não tem efeito */
+}
+
+#header {
+    text-align: center;
+/*
+    margin: 20px;
+    border-top: 1px solid black;
+*/
+    border-bottom: 1px solid #BCBCBC;
+}
+
+#TOC li {
+    list-style: outside none url;
+}
+
+blockquote {
+    font-size: 17.5px;
+    width: 90%;
+    border-left: none;
+    margin: auto;
+}
+
+blockquote > blockquote > p {
+    color: "red";
+    text-align: right;
+}
+
+/*------------------------------------------- */
+
+pre {
+    word-break: keep-all;
+    margin: 1ex 0px 1ex 0px;
+    padding: 2px 1ex 2px 1ex;
+    border: 0px solid #CCC;
+    border-radius: 1px;
+}
+
+pre code {
+    font-size: 14px;
+}
+
+/* R input */
+pre, code {
+    background-color: #EDEDED;
+    color: #333;
+}
+
+/* R output */
+pre:not([class]) code {
+    background-color: #D4D4D4;
+}
+
+pre:not([class]), code {
+    background-color: #D4D4D4;
+    font-size: 15px;
+}
+<<<<<<< HEAD
+
+/*------------------------------------------- */
+=======
+>>>>>>> e9fcd1add21fba57f7d96748722f35e6fcfaa20c

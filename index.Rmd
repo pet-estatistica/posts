@@ -1,0 +1,114 @@
+---
+output:
+  html_document:
+    toc: false
+    css: posts/_style.css
+---
+
+<!--
+  CSS do documento capa.
+-->
+<style type="text/css">
+#header {
+    text-align: left;
+}
+</style>
+
+<!--
+  Código HTML para fazer o título.
+-->
+<table width="100%">
+<tr>
+<td align="left" valign="bottom" width="120px">
+<img src="img/PetLogo.png" width="80px" />
+</td>
+<td align="left" valign="top">
+<div class="fluid-row" id="header">
+<h1 class="title">Posts</h1>
+<h4 class="author"><em>PET Estatística - http://www.pet.est.ufpr.br</em></h4>
+</div>
+</td>
+</tr>
+</table>
+
+<!------------------------------------------- -->
+<!------------------------------------------- -->
+
+```{r, include=FALSE}
+#-----------------------------------------------------------------------
+# Função que pega o título e autor de cada matéria.
+
+library(XML)
+
+get_infos <- function(file) {
+    # file <- "./posts/post-1.html"
+    id <- gsub(pattern = "^.*-(\\d+)\\.html",
+               replacement = "\\1",
+               x = file)
+    pr <- readLines(file)
+    h <- htmlTreeParse(file = pr,
+                       asText = TRUE,
+                       useInternalNodes = TRUE,
+                       encoding = "utf-8")
+    # Title.
+    tt <- getNodeSet(doc = h,
+                     path = "//title",
+                     fun = xmlValue)
+    # Author.
+    at <- getNodeSet(doc = h,
+                     path = "//h4[@class='author']",
+                     fun = xmlValue)
+    dt <- getNodeSet(doc = h,
+                     path = "//h4[@class='date']",
+                     fun = xmlValue)
+    return(c(id = id,
+             path = file,
+             title = tt[[1]][1],
+             author = at[[1]][1],
+             date = dt[[1]][1])
+           )
+}
+
+fl <- list.files(path = "posts",
+                 pattern = "post.*\\.html",
+                 full.names = TRUE)
+
+L <- lapply(fl, get_infos)
+L <- L[order(as.integer(sapply(L, "[[", "id")), decreasing = TRUE)]
+
+# HTML.
+itens <- sapply(L,
+                function(x) {
+                    sprintf("<li>%s - <a href=\"%s\">%s</a> - %s.</li>",
+                            x["id"],
+                            x["path"],
+                            x["title"],
+                            x["author"])
+                })
+
+# MarkDown.
+itens <- sapply(L,
+                function(x) {
+                    sprintf("1. [%s](%s) - %s (%s).",
+                            # x["id"],
+                            x["title"],
+                            x["path"],
+                            x["author"],
+                            x["date"])
+                })
+
+```
+
+## Introdução
+
+O repositório posts reúne matérias publicadas do Blog do PET
+(<http://www.pet.est.ufpr.br/>). As matérias são relacionadas
+principalmente ao PET, ensino e educação, Estatística e Software livre.
+
+## Lista de Posts
+
+A lista de posts, com os mais recentes no topo, está exibida abaixo.
+
+```{r, echo=FALSE, results="asis"}
+cat(itens, sep = "\n")
+```
