@@ -48,17 +48,17 @@ assim tempo hábil para incorporação de sugestões e eventuais correções.
 
 |  Autor   | Entrega Para Revisão | Revisor  |   Status   |
 |:--------:|:--------------------:|:--------:|:----------:|
-|  Lineu   |        21/08         | Jhenifer | issue #95  |
-| Jhenifer |        28/08         |  Nilton  | issue #96  |
-|  Nilton  |        04/09         | Altamiro | issue #97  |
-| Altamiro |        11/09         | William  | issue #98  |
-| William  |        18/09         | Augusto  | issue #99  |
-| Augusto  |        25/09         |  Jayme   | issue #100 |
-|  Jayme   |        09/10         |  Walmes  | issue #101 |
-|  Walmes  |        16/10         | William2 | issue #102 |
-| William2 |        23/10         | Vinicius | issue #103 |
-| Vinicius |        30/10         |  Nivea   | issue #104 |
-|  Nivea   |        06/11         |  Lineu   | issue #105 |
+|  Lineu   |        21/08         | Jhenifer | issue #02  |
+| Jhenifer |        28/08         |  Nilton  | issue #03  |
+|  Nilton  |        04/09         | Altamiro | issue #04  |
+| Altamiro |        11/09         | William  | issue #05  |
+| William  |        18/09         | Augusto  | issue #06  |
+| Augusto  |        25/09         |  Jayme   | issue #07  |
+|  Jayme   |        09/10         |  Walmes  | issue #08  |
+|  Walmes  |        16/10         | William2 | issue #09  |
+| William2 |        23/10         | Vinicius | issue #10  |
+| Vinicius |        30/10         |  Nivea   | issue #11  |
+|  Nivea   |        06/11         |  Lineu   | issue #12  |
 
 
 
