@@ -118,4 +118,4 @@ git commit -m "Incorpora as sugestões da revisão na matéria #0"
 
 
 
-[site do PET-Estatística]: https://pet-estatistica.github.io/
+[site do PET-Estatística]: https://pet-estatistica.github.io/site/
