@@ -1,0 +1,35 @@
+% GAMLSS: uma flexível alternativa para modelagem
+% Lineu Alberto
+
+Dentre as diversas possibilidades de abordagem entre os modelos de regressão, 
+há uma classe específica com interessantes peculiaridades: os modelos GAMLSS 
+(RIGBY e STASINOPOULOS, 2005).
+
+A sigla GAMLSS é abreviação para Generalized Additive Models for Location, 
+Scale and Shape; cuja tradução equivale a Modelos Aditivos Generalizados para 
+Locação, Escala e Forma. 
+
+Várias são as vantagens nesta classe de modelos, sua forma é semelhante à 
+de um GLM: há um componente sistemático e um aleatório que são relacionados por 
+uma função de ligação; além disso o framework de distribuições disponíveis é bem 
+maior que o dos GLM, já que estes se restringem a distribuições pertencentes à 
+família exponencial.
+
+Além disso, é possível modelar a média (ou outro parâmetro de locação), 
+simultâneamente à parâmetros de escala (como a variância), assimetria e até 
+mesmo curtose em função de covariáveis no mesmo modelo.
+
+Ademais, é exequível acrescentar efeitos aleatórios e ainda termos de regressão 
+não paramétrica (como splines).
+
+Todas as características citadas fazem dos modelos GAMLSS uma classe 
+extremamente flexível de modelos de regressão no qual há diversas possibilidades 
+para modelagem e acomodação de dispersão excessiva e relações complexas entre as 
+variáveis em estudo.
+
+No R, os modelos desta classe foram implementados no pacote GAMLSS.
+
+Por fim, por mais que haja uma série de atrativos que chamam a atenção em termos 
+de modelagem, é válido alertar que o uso de todas as possibilidades do GAMLSS 
+pode levar à um modelo super-ajustado; sendo assim recomenda-se fazer uso dos 
+métodos que compõe os modelos desta classe com cuidado e parcimônia.

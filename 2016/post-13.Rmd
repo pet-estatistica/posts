@@ -1,0 +1,42 @@
+% The Khan Academy
+% Bruna Wundervald
+
+  Durante a graduação, seja ela em Estatística ou qualquer outro curso, muitas 
+dificuldades surgem. Uma das maiores dificuldades que os graduandos têm é, por
+exemplo, a falta de materiais que sanem suas dúvidas de forma descomplicada. Por
+conta disso, iniciativas como a *The Khan Academy* vêm surgindo ao longo dos 
+últimos anos.
+ 
+  A *Khan Academy* é uma ONG criada e subsidiada por *Salman Khan*, um educador 
+e empresário americano, em 2006. Ela é uma plataforma de ensino online de 
+educação livre, sem fins lucrativos, que já possui mais de 4.000 vídeos 
+sobre os mais diversos assuntos: matemática, **estatística**, física, história,
+química, biologia, astronomia, e etc. Hoje, o canal do *Youtube* da Academia
+possui mais de 2.500.000 inscritos, e a maioria de seus vídeos possui legendas.
+  
+  Estes vídeos, acessados gratuitamemte, são utilizados como ferramenta de 
+ensino em diversas escolas e instituições brasileiras, além de ajudar muitos
+estudantes ou mesmo curiosos, que os buscam por conta própria. O atual 
+*Slogan* da Academia é:
+
+>	*"Nossa missão é acelerar a educação para estudantes de todas as idades."*
+  
+  Além dos vídeos educativos, a *Khan Academy* oferece também, em seu 
+[site](https://pt.khanacademy.org/) a possibilidade da criação de "turmas" por
+tutores, que podem ser acompanhadas diretamente no site; divulgação de 
+oportunidades de trabalho e estágio; a possibilidade de fazer doações 
+- já que é uma ONG - ou ser voluntário na Academia; a possibilidade de adicionar
+um "tutor" para si mesmo (um professor, um parente...) que irá acompanhar e 
+auxiliar seu desenvolvimento; além do próprio aluno/usuário poder notar seu 
+progresso por meio dos níveis de evolução que existem dentro do site - que vêm 
+com pequenas "recompensas". 
+ 
+  Tudo isso serve para estimular a aprendizagem e tutoria, tanto por parte de
+alunos quanto de professores ou qualquer pessoa que tenha interesse. O 
+[vídeo](https://www.youtube.com/watch?v=JC82Il2cjqA) de apresentação da 
+Academia traz essa ideia como uma forma de motivar as pessoas a participarem 
+desse projeto. 
+
+
+___________________________________________________________________________
+

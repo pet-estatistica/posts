@@ -1,0 +1,31 @@
+---
+title: "Quadro dos Saberes"
+output: html_document
+---
+
+O Quadro dos Saberes é uma ferramenta educacional construída por estudantes. O 
+Quadro possui 3 colunas: "Quem eu sou", "O que eu sei" e "O que eu quero saber".
+Os estudantes são incentivados a preencher as colunas do Quadro e analisar as 
+informações de seus colegas e, a partir delas, buscar orientação ou parceria para 
+o seu próprio aprendizado.  
+
+Com o objetivo de incentivar a autonomia acadêmica e independência dos estudantes
+ao construir seu conhecimento, o quadro proporciona oportunidades, tanto de 
+adquirir como de compartilhar saberes. Além disso, ajuda a conhecer as 
+carências do curso e da experiência universitária como um todo: com as 
+informações obtidas a partir do Quadro, será possível criar novos cursos, 
+projetos e grupos de estudo orientados pela curiosidade dos próprios alunos.
+
+O currículo universitário está cada dia mais defasado, e só com persistência e 
+proatividade os estudantes serão capazes de realmente usar esses anos para se 
+preparar para o futuro e para o mercado de trabalho. No Quadro feito no 
+PET-Estatística, por exemplo, os assuntos mais procurados são "LaTex" e 
+"Machine Learning", mas o seu conteúdo não é limitado a assuntos ligados à 
+graduação, mas também a formação pessoal, cultural e outras diversas formas de 
+conhecimento.
+
+O aprendizado independente permite ao aluno encontrar a sua própria maneira de 
+aprender, e incentiva a criação de grupos nos quais o conhecimento é construído,
+e não ensinado.
+
+

@@ -1,0 +1,35 @@
+% Otimização em Estatística
+% Altamiro Antonio Basiewics
+
+
+Tomar decisões certas num ambiente de incertezas, coletar e avaliar
+dados, trabalhar com modelos complexos, eis algumas das tarefas da
+Ciência Estatística. Em face desses objetivos, muitos métodos para
+solucionar tais problemas demandam processos de otimização. Um exemplo é
+a regressão linear simples, onde um processo de minimização é requerido
+e a solução dada é analítica. Outros exemplos são o teste de hipótese,
+experimentos, problemas de controle de processos industrias, análise
+multivariada, machine learning etc.
+
+Otimização aqui significa encontrar a melhor solução, seja maximizar, 
+minimizar ou encontrar um valor de compromisso, conseguir melhor
+resultado ou estimativa ou comportamento aproximado a um modelo ideal
+almejado.
+
+Um campo em grande desenvolvimento com grande número de
+publicações e até congressos para tratar do tema. É preciso dizer que 
+muitos desses métodos são possíveis graças a formulação de algorítimos
+mais eficientes e computadores mais rápidos, frente a grande quantidade
+de trabalho aritmético exigido. Inclusive alguns  métodos clássicos só 
+foram aplicados realmente a partir do uso de computadores.
+
+Entre os métodos clássicos podemos citar a Pesquisa Operacional, que
+trata da construção e elaboração de modelos onde as variáveis são
+testadas e a solução é encontrada, a programação matemática, cálculo
+variacional, programação linear e programação não linear, método
+simplex, gradientes, etc.
+
+Por isso o estudante de Estatística deve estudar com carinho e atenção
+as disciplinas de Cálculo, principalmente Cálculo 2, Pesquisa
+Operacional e uma grande variedade de métodos heurísticos modernos
+aplicados à otimização.

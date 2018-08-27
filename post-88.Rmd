@@ -1,0 +1,47 @@
+% Afinal, o que é, e para que é utilizada a Deep Web? 
+% Nilton S.
+
+Nos enganamos ao pensar que tudo que encontramos na web, se restringe ao que o 
+google ou qualquer outro mecanismo de busca consegue encontrar e disponibilizar 
+para o usuário. Mal sabemos nós,  que o pouco que conhecemos na web é muito 
+menor do que podemos imaginar. 
+Surface web, ou “internet superficial”, é aquela que é visível para todos os 
+usuários, porém ela consiste em nada mais do que aproximadamente 15% de todo o 
+conteúdo criado e disponibilizado na web em si. 
+Sendo assim, onde se encontram o resto de todo o material disponível para ser
+acessado? Nesse sentido, falarei um pouco mais a respeito de uma dessas partes um
+pouco mais ocultas da internet: A Deep web. 
+A Deep web , ou “internet profunda”, está diretamente ligada a internet em si, 
+porém podemos resumir que a diferença de acesso se restringe a um usuário não 
+conseguir acessar suas páginas sem ter o conhecimento do endereço da máquina ou 
+pesquisando em mecanismos de buscas comuns. 
+Então como faço para acessa-la? A forma mais comum e utilizada que temos
+conhecimento para acessar essas informações e por meio do navegador Thor 
+(existem outros navegadores, mas citarei apenas esse a princípio), criado pela 
+Marinha dos EUA, que basicamente tem como função embaralhar o identificação dos
+computadores. Imaginemos que, para acessar um site, saímos de “x” e vamos até 
+“y”. Porém ao invés de irmos diretamente de um para outro , passamos antes por 
+“a” , por “d” , “g” , “w” e etc. Essa é a função do Thor, dificultar o 
+rastreamento de uma máquina “mascarando” sua localização. Assim sendo com o link 
+em mãos basta digitá-lo no navegador e acessar o que se deseja. Normalmente a 
+maioria dos links terminam com a expressão .onion ao invés do .com, porém não é 
+uma regra. 
+Sendo assim, a Deep Web começa a ser vista com outros olhos, afinal essa 
+dificuldade de rastreamento começa a se tornar um grande trunfo para quem 
+não quer ser localizado, logo pode ser vista como uma boa ferramenta para ações
+ilícitas: assassinos de aluguel, tráfico de drogas, tráfico de órgãos, apostas 
+ilegais, pornografia infantil e tudo de mais macabro que se possa pensar.
+E como o comércio é feito de forma que ninguém perceba? Entramos em um assunto 
+que está virando febre no mundo: a criptomoeda BITCOIN. Por ter uma 
+identificação extremamente complicada e um banco de transações que  utiliza 
+muito pouco as informações dos usuários, a Bitcoin se tornou o principal meio 
+para se fazer transações nesse mercado negro da web, e agora para a Surface Web
+também.
+É importante ressaltar que, apesar do Thor dificultar extremante a localização 
+da máquina, ele não funciona como uma janela de modo privado, e pode sim ser 
+rastreado.
+Após esse breve resumo a respeito da Deep web, concluo que como a maioria das 
+criações que temos nos dias de hoje , a Deep é e poderia ser usada cada vez mais 
+para beneficiar o mundo de diversas formas, mas como muitos outros sistemas, 
+foi corrompida pelo próprio homem é agora virou basicamente um sinônimo de tudo 
+aquilo que não é certo ou legal. 

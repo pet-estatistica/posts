@@ -1,0 +1,35 @@
+% Gráficos
+% Altamiro Antonio Basiewics
+
+
+Se observarmos uma tabela de dados e suas colunas, pouco pode inferir
+sobre as relações entre dados. Imagine uma tabela com múltiplas
+colunas, na qual ficaríamos perdidos devido a tantos dados, a 
+não ser para valores individuais ou específicos.
+
+Então, devido a nossa capacidade e habilidades cognitivas em processar
+imagens e padrões, pois somos criaturas visuais, os recursos gráficos
+tornam mais claras muitas dessas relações.
+
+Esses elementos não servem apenas para ilustrar e informar leigos, é
+importante como instrumento de análise de informações complexas, mostram
+a “forma” ou “feição” dos dados. Mas também podem levar a equívocas e
+más interpretações.
+
+No trabalho com os gráficos alguns cuidados devem ser tomados. Muitos
+são elaborados por pessoas que tem pouca habilidade com dados
+quantitativos e não podem apresentar as relações corretas entre os
+dados.
+
+Em primeiro lugar, ter clara idéia da informação a transmitir e qual
+correlação entre as variáveis deve ser tomada. Colocar explicações
+quando houver algo muito complexo. Conhecer os diversos tipos de
+gráficos e as possíveis informações que podem apresentar. Evitar
+informações desnecessárias e elementos acessórios que podem desviar a
+atenção do leitor.
+
+Em síntese, um gráfico é algo que comunica algo através de nossa
+percepção visual. Quais as melhores cores, contrastes, posições entre os
+elementos, tamanhos, quais elementos visuais podem mostrar melhor as
+grandezas quantitativas, rejeitar os limites de nossa memória de curto
+prazo. 

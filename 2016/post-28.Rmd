@@ -1,0 +1,42 @@
+% Riscos competitivos
+% Ângela Legey
+
+A análise de sobrevivência são técnicas estatísticas para a realização de um 
+estudo com dados de tempos de vida. Dentre os diversos fatores que podem ser 
+considerados para a utilização desse técnica, temos a presença de **censura** em
+nossos dados. Censura são as observações que foram perdidas ao longo do estudo, 
+que não obtiveram o desfeicho de interesse.
+Um exemplo, seria o tempo de sobrevida de um paciente diagnosticado com uma 
+doença até a sua cura. Se o paciente vem a óbito antes da cura, ou se é perdido 
+o contato de acompanhamento desse indivíduo, estas observações seriam censuradas.
+
+Com essa técnica, permite utilizar essas informações de todos os indivíduos 
+(censurados ou não), avaliando com maior competência os eventos ocorridos ao 
+longo do estudo. Também permite determinar de maneira correta o ritmo dos eventos 
+que decorrem nos diferentes grupos em estudo.
+
+Os métodos usuais de estimação consideram apenas um desfecho de interesse, 
+por exemplo óbito por câncer. Porém, é ignorado a probabilidade de outros desfechos 
+como o paciente vir a óbito por causas não relacionadas ao câncer.
+Com isso, surge o interesse em estimar os eventos chamados **competitivos**, 
+ou seja, são decorrente de um mesmo fator de risco, no qual se um ocorre, 
+exclui a possibilidade do outro acontecer. Esse método tem ganhado mais visibilidade 
+na área médica, por ser mais próximo do que realmente acontece com os pacientes 
+sob estudo.
+
+Esses riscos competitivos podem ser classificados em três tipos:
+
+- Sobrevivência até o primeiro dos desfechos: é recomendada
+para casos nos quais há vários possíveis efeitos de um fator
+de risco.
+
+- Risco específico por causa: utilizada para estimar o efeito
+de um variável sobre um desfecho específico, e assim considerando
+os demais como censura não informativa.
+
+- Modelagem da subdistribuição do risco: esse método faz uma
+ponderação levando em consideração a totalidade dos desfechos.
+
+A abordagem correta do estudo em interesse trará melhores estimações, e conclusões
+mais satisfatórias. Portanto, deve-se atentar com o interesse do estudo e se há
+necessidade da utilização de métodos clássicos ou de riscos competitivos.

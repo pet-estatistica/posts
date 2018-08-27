@@ -1,0 +1,72 @@
+Mineração de Texto
+==================
+
+O meio de armazenamento e propagação de informação mais natural é o
+texto. É o típo de mídia mais antigo utilizado para divulgar
+informação. Hoje existe muito conteúdo de entretenimento em aúdio e
+vídeo, mas o texto ainda é predominantemente usado para registro de
+informações e comunicação entre pessoas.
+
+A internet é uma fonte abundante de texto em constante atualização, como
+jornais eletrônicos, blogs, paǵinas de divulgação de produtos e
+serviços, serviços de email, chat e redes sociais. Estatísticos relatam
+que 80% da informação que é armazenada é no formato de texto,
+enfatizando o valor comercial dessa fonte de informação (Ramasubramanian
+and Singh 2017)[^1].
+
+No entanto, apesar de abundante, o tratamento e análise de texto é
+repleto de desafios. A primeira dificuldade no tratamento de dados na
+forma de texto decorre da falta de estrutura, ou melhor, da falta de
+previsibilidade estrutural do dado[^2]. O texto certamente possui
+estrutura linguística mas não tem estrutura lógica ou previsível como um
+dado numérico. Por exemplo, o peso de uma pessoa pode ser medido em
+metros e armazenado com duas casas decimais. No texto, por outro lado,
+não tem como estabelecer normas.
+
+Além da questão estrutural, os textos possuem desafios relacionados à
+própria comunicação, como por exemplo, o uso de: 1) sinônimos - várias
+palavras ou expressões com o mesmo significado; 2) ambiguidade - como a
+que ocorre em "o homem viu o menino com os binóculos", quem estava com
+os binóculos?
+
+Mineração de texto refere-se geralmente ao processo de extração de
+informação, padrões e conhecimento a partir de documentos de texto.  A
+mineração de texto (text mining) é uma área multidisciplinar pois envolve,
+principalmente, mineração de dados, linguística computacional, machine
+learning, base de dados e tecnologia web, reunindo assim elementos das
+grandes áreas de linguística, computação e estatística.
+
+São alguns problemas típicos de mineração de texto: similaridade e
+agrupamento de documentos (medir a semelhança entre textos e formar
+grupos), análise de sentimento e opinião (detectar se um texto é
+positivo ou negativo), extração e entidades (determinar substantivos ou
+sujeitos, como pessoas e organizações), modelagem de tópicos
+(identificar o assunto de um documento).
+
+Os problemas de mineração de texto são, via de regra, caracterizados
+pela alta dimensão e elevado consumo de espaço em disco. Por isso, poder
+de processamento e armazenamento são fundamentais para implementação de
+soluções em mineração de texto em escala comercial.
+
+Vários softwares existem para aplicação de análise texto. A maioria
+deles é comercial. O R é uma linguagem e software livre para computação
+estatística, livre e de código aberto, com recursos para mineração de
+texto. A task view de [processamento da linguagem natural] reúne pacotes
+com funcionalidades voltadas para a análise de texto.
+
+A mineração de texto é uma área nova, repleta de desafios e
+oportunidades, com ampla empregabilidade e potencial uso em
+negócios. Dessa forma, para ser um profissional competitivo, o
+Estatístico deve, cada vez mais, se preperar para solucionar problemas
+de Ciência e Mineração de Dados pois eles vão se tornar cada vez mais
+frequentes e complexos.
+
+<!------------------------------------------- -->
+
+[^1]: Ramasubramanian, Karthik, and Abhishek Singh. 2017. Machine Learning
+  Using R. Place of publication not identified: Apress. Accessed March
+  10, 2017. http://lib.myilibrary.com?id=984509.
+
+[^2]: http://sherpasoftware.com/blog/structured-and-unstructured-data-what-is-it/
+
+[processamento da linguagem natural]: https://cran.r-project.org/web/views/NaturalLanguageProcessing.html

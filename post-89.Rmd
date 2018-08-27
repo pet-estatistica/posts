@@ -1,0 +1,27 @@
+% Métodos alternativos para estimação de parâmetros de regressão
+% Lineu Alberto
+
+Em Estatística, quando o assunto são modelos de regressão, há a necessidade da 
+estimação de parâmetros. A abordagem tradicional para a estimação é baseada no 
+paradigma da verossimilhança, trata-se de um método comprovadamente eficiente, 
+que consiste na obtenção da função de verossimilhança (produtório da função 
+densidade de probabilidade), derivação desta função em relação aos parâmetros e 
+obtenção da matriz de informação de Fisher para, por fim, obter os parâmetros de 
+regressão (normalmente por meio de algum método iterativo, tal como 
+Newton-Raphson). Porém este método tem algumas implicações, a mais importante 
+delas é que há a necessidade de saber previamente a qual distribuição de 
+probabilidade os dados pertencem, pois é com base nesta distribuição que 
+obtém-se a função de verossimilhança (produtório da função densidade de 
+probabilidade) a ser maximizada para obter o vetor de parâmetros. 
+
+Todavia, existem métodos que não requerem suposições quanto à distribuição dos 
+dados para fazer inferência aos parâmetros; esta é uma das principais vantagens 
+destes métodos que, além disso, se mostram formas interessantes e por vezes 
+flexíveis para estimação e inferência em modelos de regressão em geral. No 
+artigo Flexible Tweedie regression models for continuous data, escrito pelo 
+professor Wagner Hugo Bonat do dpto de Estatística da UFPR são discutidos os 
+métodos da quase e pseudo-verossimilhança num contexto específico: estimação dos 
+parâmetros de regressão e dispersão em modelos de regressão da família Tweedie,
+este post foi inspirado neste material e o post seguinte será destinado à 
+contextualização de forma geral dos métodos da quase-verossimilhança e 
+pseudo-verossimilhança.

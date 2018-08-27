@@ -1,0 +1,58 @@
+% Alan Turing - O Gênio Esquecido
+% Guilherme Fernando Hathy
+
+No dia 20 de agosto de 1940, Winston Churchill, durante um discurso na
+Câmara dos Comuns, proferiu a célebre frase: "Nunca antes no campo dos
+conflitos humanos, tantos deveram tanto a tão poucos.". Se existe uma
+pessoa que se enquadra nessa frase, ela é Alan Turing. Talvez ele seja o
+maior soldado da Segunda Guerra, mesmo nunca tendo segurado em uma arma,
+considerado o pai da informatica, concebendo a teoria da computação
+mesmo antes da criação do computador. Talvez o maior gênio do século
+XX. Mas agora eu te pergunto, você já ouviu falar em Alan Turing?
+Provavelmente não.
+
+Alan Mathison Turing, nasceu na cidade de Paddington, na Inglaterra, no
+dia 23 de junho de 1912. Turing teve uma infância muito regrada. Desde
+pequeno Turing demonstrou um grande talento para a resolução de
+problemas matemáticos complexos e após conhecer Christopher Morcom, na
+tradicional Escola Sherbourne, Turing desenvolveu um grande interesse
+pela área de criptografia.
+
+Em 1929, Turing e Morcom foram para Cambridge estudar matemática, mas
+infelizmente no ano posterior Morcom veio a falecer. De certa forma,
+Turing parece ter se sentido responsável por realizar tudo aquilo que
+Morcom não mais poderia. Assim em 1934 Turing se formou, graduando-se
+com honra.
+
+Depois de formado Turing se dedicou a criar uma máquina automatizada,
+que materializasse a lógica humana e solucionasse qualquer cálculo,
+concebendo assim a "Máquina de Turing", que foi considerada o fundamento
+da Ciência da Computação. De setembro de 1936 a julho de 1938, Turing
+realizou seu doutorado em Princeton.
+
+Após seu retorno ao Reino Unido, em 1939, a Inglaterra declara guerra à
+Alemanha, assim Turing começa a trabalhar em Bletchley Park, onde
+dedicou-se à quebrar a Enigma, uma máquina de criptografia que a
+Alemanha usava para transmitir as suas mensagens. Para muitos na época,
+a Enigma era simplesmente inquebrável. Utilizando modelos estatísticos
+sofisticados, Alan construiu a Bombe, uma máquina capaz de
+descriptografar qualquer mensagem escrita utilizando a Enigma e após
+esse feito Turing começou a fazer um trabalho estatístico para escolher
+quais ataques alemães deveriam ser evitados, pois se a Inglaterra
+evitasse todos, a Alemanha iria saber que a enigma tinha sido
+quebrada. Com esse trabalho estima-se que a Segunda Guerra foi encurtada
+em aproximadamente 2 anos e 21 milhões de vidas foram salvas.
+
+Bom, após esse singelo resumo da vida desse herói, não tenho uma boa
+notícia: essa história não acaba com um final feliz. Em 1952, Turing foi
+preso e acusado de atentado violento ao pudor. Conhecido por quebrar um
+dos maiores segredos do mundo, a Enigma, Alan também possuía um segredo,
+sua sexualidade. Infelizmente, na Inglaterra da década de 50, a
+homossexualidade era considerada um crime e em 52 Turing foi
+condenado a tomar injeções hormonais, que causaram vários efeitos
+colaterais em seu corpo, entre elas a depressão. Infelizmente aos 41
+anos e no ápice de sua genialidade, Alan Mathison Turing suicidou-se com
+cianeto.
+
+> "Eu Acredito, que às vezes são as pessoas que ninguém espera nada que
+> fazem as coisas que ninguém consegue imaginar." - Alan Turing

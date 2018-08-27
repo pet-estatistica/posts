@@ -1,0 +1,51 @@
+% Scrum: Um Método para Trabalhar em Equipe
+% Jhenifer C. Veloso
+
+Scrum é um método que visa melhorar o desempenho de equipes de trabalho. 
+Como consequência disso, o projeto é realizado com baixo custo, menos 
+tempo (uma vez que não haverá atrasos) e o produto final supera as 
+expectativas de qualidade. Para a obtenção desse resultado, o Scrum é 
+fundamentado em três pilares: transparência (todos os envolvidos tem 
+conhecimento sobre o andamento do projeto), inspeção (as tarefas 
+realizadas são inspecionadas durante todo o processo e ao finalizá-las) 
+e adaptação (o projeto sofre adaptação conforme a necessidade de mudança 
+das tarefas).
+
+Para a aplicação do Scrum é indispensável a existência de 3 papéis 
+fundamentais: o **Product Owner**, que é o(s) responsável(s) pelo 
+projeto, o **Scrum Master**, que é a pessoa que vai orientar e auxiliar 
+a equipe de trabalho e o **Dev Team**, que são as pessoas que realmente 
+vão colocar o projeto em prática. Uma característica interessante deste 
+método é que não será o dono do projeto ou o auxiliador quem vai decidir 
+a forma como serão realizadas as tarefa, a equipe de trabalho tem total 
+liberdade para decidir a maneira como vão realizar a tarefa visando 
+atingir a meta estabelecida.
+
+O Scrum funciona com a definição de objetivos sequenciais, que devem ser
+concluídos em um período definido, chamado de *sprints*. Esses sprints 
+são reuniões realizadas em um intervalo (fixo), onde a equipe apresenta 
+a tarefa realizada e decide a quantidade de trabalho que acredita ser 
+capaz de executar durante o intervalo entre os sprints. Nessas reuniões 
+cada membro da equipe responde a três perguntas:
+
+* O que eu fiz desde a última vez que conversamos? 
+* O que vou fazer antes de voltarmos a conversar?
+* O que está atrapalhando o meu trabalho?
+
+Essa metodologia permite que as equipes tenham um feedback quase
+que imediato do trabalho realizado, atende aos três pilares do Scrum e 
+certifica-se que tudo o que estivesse atrapalhando a equipe seja 
+resolvido até a reunião seguinte.
+
+#### Passos para implementar o Scrum:
+
+**1.** Escolha o dono do produto.  
+**2.** Escolha uma equipe.  
+**3.** Escolha um mestre Scrum.  
+**4.** Crie e priorize uma lista de pendências do produto.  
+**5.** Faça estimativas para as pendências do produto.  
+**6.** Planejamento do Sprint.  
+**7.** Torne o trabalho visível.  
+**8.** Reuniões diárias (ou semanais).  
+**9.** Revisão ou demonstração do Sprint.  
+**10.** Retrospectiva do Sprint.

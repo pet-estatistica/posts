@@ -1,0 +1,44 @@
+% Minha Experiência como Aluna na Empresa FazInova
+% Paula Alessandra Zeizer Dimas
+
+Conheci algumas semanas atrás a empresa FazInova. A empresa foi fundada 
+pela brasileira Bel Pesce, empreendedora formada no Massachusetts Institute
+of Technology (MIT), sócia da empresa Lemon Wallet e escritora do livro 
+"A Menina do Vale" (livro que aborda sobre como ter uma atitude empreendedora).
+Bel Pesce deixou o Vale do Silício para empreender em prol da educação 
+no Brasil, fundando assim a empresa 
+[FazInova](http://www.fazinova.com.br) 
+
+FazInova é uma empresa que oferece cursos onlines e presenciais gratuitos,
+com conteúdos que complementam de forma abrangente e qualificada a formação
+de qualquer pessoa. Ao fazer o login, o usuário se depara com vários campos
+(chamados de sonhos) os quais pode-se seguir. Dentre eles haviam as opções:
+    
+* Abrir StartUp;
+
+* Aprender Inglês (e diversas outras línguas);
+
+* Desenvolvedor Web;
+
+* Desenvolver Relacionamentos Pessoais;
+    
+* Escrever Melhor;
+
+E diversos outros tipos de sonhos. Clicando em um, o site apresenta 
+os melhores recursos gratuitos para o desenvolvimento do sonho, além disso 
+há dicas e um fórum para trocar informações com outros usuários.
+O site ainda oferece cursos online:
+    
+* Curso Canvas de Modelo de Negócios;
+
+* Curso A Menina do Vale (atitude empreendedora);
+
+* A arte da escrita e outros cursos;
+
+Cada curso é dividido em vídeo-aulas, e possui um campo ao lado para
+anotações. Além dos vídeos, há exercícios disponíveis.
+
+O site é incrível, e o seu propósito também. Tanto a iniciativa da empreendedora, 
+como a própria Bel Pesce servem de grande inspiração para todos que buscam 
+crescer no nível pessoal e profissional. 
+

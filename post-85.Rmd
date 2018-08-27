@@ -1,0 +1,233 @@
+---
+title: "Perfil dos Ingressos na DSBD"
+author: "Walmes Zeviani"
+output: html_document
+---
+
+O curso de especialização em *Data Science & Big Data* (DSBD) da UFPR
+iniciou com a primeira turma no primeiro semestre de 2018.  O curso teve
+mais de 180 interessados que preencheram formulário para recebimento de
+notícias e abertura de novas turmas presenciais e de ensino a distância.
+71 pessoas se inscreveram para o processo seletivo do primeiro semestre
+de 2018, das quais 36 foram aprovadas e começaram o curso.
+
+O DSBD é resultado de uma parceria entre os departamentos de Estatística
+(DEST) e de Informática (DINF) que uniram professores e infraestrutura
+para ofererer um curso com especialistas nas áreas relacionadas a *D
+ata
+Science* e *Big Data* e estrutura de computação de ponta.  Todas as
+informações sobre o curso estão disponíveis no site
+<http://dsbd.leg.ufpr.br/>.
+
+O objetivo dessa matéria é fazer uma análise do perfil dos ingressos no
+DSBD.  Será considerada a distribuição geográfica, as áreas de formação
+e a carta de intenções submetida pelos canditados durante a inscrição.
+
+# Distribuição geográfica
+
+```{r, include = FALSE}
+rm(list = ls())
+load(file = "post-85.RData")
+ls()
+
+library(ggplot2)
+library(gridExtra)
+library(reshape2)
+library(proxy)
+library(dendextend)
+```
+
+Quanto a distribuição geográfica, a maior parte dos candidatos é do
+Paraná, sendo apenas dois de São Paulo (Figura 1).  No Paraná, 30 são de
+Curitiba e 4 das cidades vizinhas São José dos Pinhais e Piraquara.
+
+```{r, echo = FALSE, fig.cap = cap, fig.height = 5}
+cap <-
+    "**Figura 1**: Distribuição geográfica dos ingressos na DSBD por Estado e cidade de residência."
+
+dsbd <- c("#003177", "#7d0061", "#00a28d")
+
+a <- ggplot(data = db,
+            mapping = aes(x = reorder(uf, table(uf)[uf]))) +
+    geom_bar(fill = dsbd[1]) +
+    xlab("Estado") +
+    ylab("Total") +
+    coord_flip()
+
+b <- ggplot(data = db,
+            mapping = aes(x = reorder(cidade, table(cidade)[cidade]))) +
+    geom_bar(fill = dsbd[2]) +
+    xlab("Cidade") +
+    ylab("Total") +
+    coord_flip()
+
+grid.arrange(a, b, nrow = 2)
+```
+
+# Formação acadêmica
+
+A distribuição quanto a formação acadêmica mostra que formações em
+Estatística (16) e ligadas a computação (14) correspondem a 30 das
+36 vagas.  Os demais canditados estão igualmente divididos na área de
+humanas, engenharias e biológicas (Figura 2).
+
+```{r, echo = FALSE, fig.cap = cap, fig.height = 5}
+cap <-
+    "**Figura 2**: Distribuição quanto a formação acadêmica dos ingressos na DSBD."
+
+a <- ggplot(data = db,
+            mapping = aes(x = reorder(area, table(area)[area]))) +
+    geom_bar(fill = dsbd[1]) +
+    xlab("Grande área do conhecimento") +
+    ylab("Total") +
+    coord_flip()
+
+b <- ggplot(data = db,
+            mapping = aes(x = reorder(subarea, table(subarea)[subarea]))) +
+    geom_bar(fill = dsbd[2]) +
+    xlab("Subárea") +
+    ylab("Total") +
+    coord_flip()
+
+grid.arrange(a, b, nrow = 2)
+```
+
+# Agrupamento hierárquico
+
+```{r, include = FALSE}
+# Variáveis a serem consideradas.
+p <- c("uf",
+       "msc",
+       "subarea",
+       "grad",
+       "instit")
+
+# Matrizes de incidência por característica.
+X <- lapply(p,
+            FUN = function(x) {
+                f <- as.formula(sprintf("~ 0 + %s", x))
+                model.matrix(f, data = db)
+            })
+X
+
+# Junta todas as matrizes.
+X <- do.call(cbind, X)
+nrow(X)
+
+# colnames(X) <- NULL
+ncol(X)
+
+rownames(X) <- db$nome
+
+# Calcula as distâncias.
+# D <- proxy::dist(X, method = "cosine")
+D <- stats::dist(X, method = "binary")
+
+hc <- hclust(D, method = "ward.D")
+agrup <- as.dendrogram(hc)
+```
+
+Para observar o nível de similaridade entre os ingressos na DSBD foi
+considerado um agrupamento hierárquico.  As variáveis utilizadas foram
+Estado de residência, área de formação conforme os níveis do gráfico
+inferir da Figura 2, instituição de formação, a formação de graduação e
+possuir mestrado.  Isso gerou uma matriz de `r ncol(X)` variáveis e para
+`r nrow(X)` indivíduos.
+
+O agrupamento foi baseado na distância para variáveis dicotômicas (ou
+seja, 0 e 1) e método de agrupamento de Ward (`method = "ward.D"`).
+
+O dendrograma (Figura 3) com corte para um divisão em 3 classes
+justamente separou os individuos conforme as áreas de formação.  O maior
+grupo, em vermelho, são dos ingressos com formação em Estatística.  Note
+que entre muitos indivíduos a distância é nula pois todos são formados
+em Estatística na UFPR e residem no Paraná.  O segundo maior grupo são
+os indivíduos com formação em áreas de computação.  E o último, são os
+com formação em engenharias, biológicas ou humanas.
+
+```{r, results = "hide", warning= FALSE, echo = FALSE, fig.cap = cap, fig.height = 6}
+cap <-
+    "**Figura 3**: Diagrama de agrupamento hierárquivo baseado no vetor de características cadastrais dos ingressos na DSBD."
+op <- par()
+par(mar = c(4.1, 1, 1, 12))
+k <- 3
+plot(color_branches(dend = agrup, k = k),
+     horiz = TRUE,
+     cex = 0.4,
+     xlab = "Distância")
+rect.dendrogram(agrup, k = k, horiz = TRUE, lty = 2, border = "gray30")
+par(op)
+```
+
+# Análise das cartas de intenção
+
+As cartas de intenção foram parte do processo seletivo.  Nesta carta os
+candidatos relataram sua experiência prévia e sua motivação e objetivos
+com relação ao curso de especialização.
+
+A núvem de palavras dos termos mais frequentes está na Figura 4.
+Palavras como data, science, big, modelagem, inteligência, oportunidade,
+computacional, análise, aparecem com muito destaque justamente porque
+descrevem o contexto profissional destes candidatos e suas intenções futuras.
+
+```{r, results = "hide", message = FALSE, warning = FALSE, echo = FALSE, fig.cap = cap}
+cap <-
+    "**Figura 4**: Núvem de palavras gerada a partir do texto extraído das cartas de intenção."
+
+str(d)
+
+library(wordcloud)
+library(RColorBrewer)
+
+# Núvem de palavras.
+wordcloud(words = d$word,
+          freq = d$freq,
+          min.freq = 5,
+          random.order = FALSE,
+          rot.per = 0,
+          family = c("Palatino", "Lato")[2],
+          colors = brewer.pal(8, "Dark2"))
+```
+
+Para ter um agrupamento menos previsível que o anterior, produziu-se um
+agrupamento baseado no texto extraído das cartas.  O texto das cartas
+foi processado para ficar em caixa baixa, as stopwords foram removidas,
+foi feito stemming (redução para radical comum) que reduz variações de
+gênero e número, etc.  Após isso, a matriz de documentos e termos foi
+gerada usando ponderação binária.
+
+O agrupamento manteve o método de Ward e a distância para variáveis
+binárias, conforme o anterior.  O resultado obtido é visto na Figura 5.
+Novamente, decidiu-se considerar 3 grupos.  Dessa vez, não houve uma
+separação que pudesse ser explicada por algumas das variáveis
+previamente apresentadas.  Os indivíduos então foram
+similares/dissimilares por razões além das conhecidas a partir dos dados
+cadastrais.  Existem maneiras de víncular explicação para essa partição
+com técnicas de mineração de texto, mas esse não foi o objetivo dessa
+análise exploratória.  O objetivo foi mostrar que as semelhanças são
+maiores do que as preconcebidas e que durante o convívio e progresso do
+curso, todos possam interagir, trocar experiências e se beneficiarem
+dessa heterogeneidade.
+
+```{r, results = "hide", warning = FALSE, echo = FALSE, fig.cap = cap, fig.height = 5}
+cap <-
+    "**Figura 5**: Distribuição geográfica dos ingressos por Estado e  cidade de residência."
+
+str(m)
+
+# D <- stats::dist(m, method = "euclidian")
+D <- proxy::dist(m, method = "cosine")
+
+hc <- hclust(D, method = "ward.D")
+agrup <- as.dendrogram(hc)
+
+op <- par()
+par(mar = c(4.1, 1, 1, 12))
+k <- 3
+plot(color_branches(dend = agrup, k = k),
+     horiz = TRUE,
+     cex = 0.4,
+     xlab = "Distância")
+rect.dendrogram(agrup, k = k, horiz = TRUE, lty = 2, border = "gray30")
+par(op)
+```

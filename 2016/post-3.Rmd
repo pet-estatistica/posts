@@ -1,0 +1,67 @@
+--- 
+title: "Plotando superfícies em um globo no R"
+author: "Bruna Wundervald"
+output: html_document
+---
+
+  O pacote *threesj* pode ser usado no *R* para a elaboração de scatterplots 3d e plotagem de dados e imagens em um globo, também em 3d. Ambas as opções podem ser reproduzidas em R markdown, aplicações Shiny, assim como simplesmente no próprio RStudio. Ele produz visualizações interativas com facilidade e clareza.
+  Neste post, vamos ver como pode-se plotar uma imagem (superfície) em um globo usando a função *globe* do pacote. 
+      
+   - Plotando um globo simples:
+
+1 - Carregar o pacote threejs.
+library(threejs)
+
+2 - Escolher a imagem que será plotado no globo. Neste caso, a imagem usada será a de um mapa mundi. Deve-se verificar a resolução da imagem que será plotada. A que usamos aqui é 5400x2700 pixeis. 
+terra <- "http://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg"
+
+3 - Plotagem da imagem no globo (globejs), que vem do pacote.
+   - O argumento "img" é a imagem a ser plotada  
+   - O argumento "bg" é o cor do plano de fundo
+   - O argumento "emissive" é a cor "emissiva" do globo
+
+Exemplo simples:
+
+globejs(img=terra, bg="white", emissive="#aaaacc")
+
+- Mudando as cores emissiva e do plano de fundo:
+globejs(img=terra, bg="red", emissive="orange")
+
+
+Um exemplo mais prático: Plotagem de voôs, de acordo com o *dataset* flights (provindo do próprio pacote *threejs*).
+
+1 - Carregando o pacote e os dados.
+library(threejs)
+data(flights)
+
+2 - Checando a forma dos dados.
+str(flights)
+head(flights)
+
+ - Nota-se que os dados contêm a latidude e longitude da origem e do destino dos voôs. 
+
+3 - Selecionando a terceira e quarta colunas do dataset (referentes ao destino), unindo estes valores em um vetor só com até duas casas decimais para cada coordenada e transformando-o em fator. 
+dest <- factor(sprintf("%.2f:%.2f",flights[,3], flights[,4]))
+
+4 - Construindo uma tabela de frequências de destinos
+freq <- sort(table(dest), decreasing=TRUE)
+head(freq)
+
+5 - Selecionando os destinos mais frequentes para destacá-los no globo. 
+frequentes <- names(freq)[1:10]
+
+6 - Subsetando os dados por frequência de destinos.
+i <- dest %in% frequentes
+voos_frequentes <-  flights[i,]
+
+7 - Selecionando a latitude e longitude dos destinos frequentes.
+latlong <- unique(voos_frequentes[,3:4])
+latlong
+
+8 - Por fim, vamos plotar no globo os destinos frequentes como barras, e os voôs como arcos. Os argumentos dos arcos (cor, tamanho..) podem ser controlados. 
+terra2 <- system.file("images/world.jpg",  package="threejs")
+globejs(img=terra2, lat=latlong[,1], long=latlong[,2], arcs=voos_frequentes,
+        arcsHeight=0.3, arcsLwd=2, arcsColor="#ffff00", arcsOpacity=0.15,
+        atmosphere=TRUE, bg="white")
+
+_______________________________________________________________________________

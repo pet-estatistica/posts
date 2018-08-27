@@ -1,0 +1,17 @@
+Atractor de Lorenz
+Rafael Morciani Alves da Silva
+
+Edward Norton Lorenz, matemático, meteorologista e pioneiro na teoria do caos, 
+apresentou a noção de atrator estranho e do termo efeito borboleta.
+Como meteorologista, encontrava muitas dificuldades na previsão do tempo. Tendo 
+em vista isso, construiu um modelo matemático do modo como o ar se move na 
+atmosfera. Com este modelo percebeu que pequenas variações no estado inicial 
+levariam a resultados muito divergentes. Essa diferença de resultados por 
+pequenas alterações no estado inicial seria conhecido posteriormente como 
+efeito borboleta.
+O termo efeito borboleta recebeu este nome pela famosa frase: “O bater de asas 
+de uma borboleta pode causar um furacão do outro lado do globo”. Essa frase faz 
+analogia de que pequenas alterações em um sistema complexo (mais precisamente 
+em um sistema dinâmico não linear) causa grandes alterações à medida que o 
+tempo passa. Na teoria do caos este efeito é relacionado a sensível dependência 
+do estado inicial de um sistema.

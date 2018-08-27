@@ -1,0 +1,46 @@
+%Linux tem vírus?
+A resposta é sim! O sistema operacional Linux não é inviolável, assim
+como qualquer outro sistema operacional. Entretanto, o Linux está bem
+menos propenso a ser infectado por vírus. Todo usuário de Windows já
+foi infectado por algum vírus pelo menos uma vez. Partindo disso, é
+mais fácil explicar porque o Linux é mais seguro quando comparado ao
+Windows expondo algumas das vulnerabilidades do Windows:
+
+1º Quando vamos baixar qualquer programa pelo Windows, é de praxe se
+deparar com uma caixa de diálogo pedindo permissão para continuar as
+próximas ações. Com isso, o usuário principal está sendo o administrador
+(também conhecido como Root) e esse é o único usuário capaz de realizar
+alterações no sistema, ou seja, com um clique você é pode não só
+possibilitar que um vírus infecte sua máquina como também instalar
+sofwares indesejados (como o Hao123).
+
+2º O Kernel e as bibliotecas DLL's  (conhecidas como a pasta System32)
+são facilmente acessadas por qualquer usuário como usuário administrador
+do Windows. E como a existência de vírus está ligada à desinformação e
+uso de usuários leigos, os quais desconhecem a utilização do sistema
+como usuário restrito, deixando a máquina mais vulnerável a infecções. 
+
+Visto isso, agora ficará fácil  compreender o porquê do Linux ser mais
+seguro. 
+Logo que o Linux é instalado, o usuário utilizado é o do tipo padrão, ou
+seja, diferentemente do Windows, o usuário não consegue realizar
+alterações (quem faz isso é o Root). Claro que também é possível usar o
+Linux como Root. No caso do Ubuntu, para alterações profundas no sistema
+, é necessário usar o comando “sudo” no terminal. Com isso o usuário se
+torna temporariamente Root do sistema. Distinto do Windows, que clicando
+em confirmar você altera o sistema, no Linux é necessário senha para
+qualquer alteração (essa senha é definida pelo usuário na instalação do
+Linux). Assim que finalizada a ação do comando “sudo” o usuário volta a
+ser do tipo padrão e o sistema está seguro de alterações indesejadas. 
+Outro fator que diminui a probabilidade de vírus no Linux é porque os
+principais programas baixados por usuários estão disponíveis em
+repositórios, ou seja, não é preciso navegar na internet e realizar o
+download em sites de segurança desconfiável.
+Além desses fatores, a maioria dos vírus foram programados por hackers
+para serem executados no Windows (.bat, .exe, .msi) que são formatos não
+executáveis no Linux.
+
+Resumindo, para ser infectado por algum vírus no Linux, é preciso
+executá-lo como Root (porque somente assim é possível dá-lo permissão
+para realizar alterações profundas no sistema), tornando bem mais
+difícil ser infectado sem querer.

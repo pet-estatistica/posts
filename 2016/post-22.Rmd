@@ -1,0 +1,188 @@
+% Tipos de Intervalo de Confiança no Monitoramento da Fração Não Conforme
+% Walmes Zeviani
+
+```{r, include=FALSE}
+source("_setup.R")
+```
+
+Em Controle Estatístico da Qualidade, item (produto ou serviço) não
+conforme é aquele que não atende às especificações de qualidade. Pode
+ser que ele não tenha atendido o único quesito avaliado, como não ter o
+tamanho adequado, por exemplo, ou não ter atendido 2 de 10 quesitos avaliados,
+como peso e cor. Não importa a quantidade, isso classificará o
+item como não conforme.
+
+A fração de não conformes é definida como a quantidade de itens não
+conformes dividida pela quantidade total de itens. Como não é possível
+avaliar todos os itens produzidos, inferimos sobre a fração de não
+conformes por meio de amostras. Se a probabilidade de um item não
+conforme for constante e igual a $p$, o número de itens não conformes em
+amostras independentes de $n$ elementos tem distribuição binomial com
+parâmetros $n$ e $p$.
+
+O gráfico de controle de Shewhart é uma das ferramentas mais utilizadas
+para o monitoramento desta fração. Este gráfico exibe
+a fração de itens não conformes em função do número da amostra,
+colocando assim os valores em sequência cronológica. A ele são
+adicionadas linhas horizontais que são os limites de controle
+estatístico para monitoramento do processo. Essas linhas nada mais são
+que os intervalos de confiança para o parâmetro $p$ da binomial, que,
+considerando a aproximação Normal para a distribuição de $\hat{p} =
+X/n$, obtêm-se por
+
+$$
+\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p} (1-\hat{p})}{n}}.
+$$
+
+Esse tipo de intervalo é simétrico por construção. Devido à aproximação Normal,
+para processos com baixa fração de itens não conformes e/ou amostras pequenas, 
+o limite inferior do intervalo de confiança pode ser negativo, o que não faz 
+muito sentido, uma vez que $p \in (0, 1)$.
+
+É possível obter intervalos para $p$ sem considerar aproximações por
+meio do perfil de verossimilhança. Para isso, consideramos a função
+*deviance*, que  é definida como
+$$
+D(p) = -2 \cdot (\ell(p) - \ell(\hat{p})).
+$$
+
+Como $\hat{p} = x/n$ é o estimador de máxima verossilhança do parâmetro
+$p$, portanto, é o valor de $p$ que confere o máximo de $\ell(p)$, sendo assim,
+a função deviance terá ponto crítico (derivada zero) em $\hat{p}$. Ao 
+multiplicar por $-2$, a função *deviance* passa a ter concavidade para cima, 
+contrária à concavidade da função de log-verossimilhança, que é para baixo.
+
+A *deviance* tem distribuição (assintótica) $\chi$-quadrado e os limites do
+intervalo  de confiança são determinados pelos valores de $p$ que apresentam uma
+*deviance* igual a $\chi_{1-\alpha}$, que é o quantil desta distribuição
+com um 1 grau de liberdade e $1-\alpha$ de área à direita.
+
+Os códigos abaixo ilustram a obtenção dos dois tipos de intervalo:
+o assintótico baseado na aproximação normal e o de *deviance*, para o
+parâmetro $p$, a partir de uma amostra aleatória da binomial. No último
+gráfico, onde está representada a função *deviance*, a linha horizontal
+que corta a função ao meio é o quantil da distribuição $\chi$-quadrado
+correspondente à confiança de 95%. Os extremos do intervalo de confiança
+de *deviance* são os valores no domínio de $p$ (eixo horizontal) onde a
+linha horizontal corta a função. Note que o limite inferior é não negativo, 
+diferente do assintótico que, por construção, está sujeito a isso.
+
+```{r}
+# Amostra aleatória da distribuição binomial.
+set.seed(123)
+n <- 30
+x <- rbinom(1, size = n, prob = 0.1)
+
+# A função de log-verossimilhança de p.
+ll <- function(p, x, n) {
+    sapply(p, FUN = function(pp) {
+        sum(dbinom(x = x, size = n, prob = pp, log = TRUE))
+    })
+}
+
+# Estimativa de máxima verossimilhança de p.
+phat <- x/n
+
+# Curva de log-verossimilhança de p.
+curve(ll(p, x = x, n = n), from = 0, to = 0.3, xname = "p")
+abline(v = phat)
+
+# Valor da log-verossimilhança no valor estimado.
+llmax <- ll(p = phat, x = x, n = n)
+
+# Intervalo baseado na aproximação normal.
+phat + c(-1, 1) * qnorm(0.975) * sqrt(phat * (1 - phat)/n)
+
+# Curva da função deviance de p.
+curve(-2 * (ll(p, x = x, n = n) - llmax),
+      from = 0, to = 0.3, xname = "p")
+abline(h = 0, v = phat)
+abline(h = qchisq(0.95, df = 1), lty = 2, col = 2)
+```
+
+Construir o intervalo de confiança para uma situação de controle
+estatístico de qualidade é ligeiramente diferente pois, ao invés de uma
+única amostra de uma variável binomial, são feitas $m$ amostras ($m >
+20$) para a calibração do gráfico de controle. Depois disso, a informação dessas
+amostras precisa ser combinada para obter-se os limites de controle.
+
+Usando o intervalo assintótico, a estimativa de $p$ é, para o caso de
+amostras de mesmo tamanho, a média das estimativas de cada amostra, ou
+seja
+$$
+\bar{p} = \sum_{i=1}^{m} \frac{\hat{p}_i}{m}.
+$$
+
+Com isso, os limites de controle são calculados por
+$$
+\bar{p} \pm z_{\alpha/2} \sqrt{\frac{\bar{p} (1-\bar{p})}{n}}.
+$$
+
+Já o [intervalo baseado na verossimilhança] não tem uma expressão tão
+simples. Na maioria das vezes, os limites são encontrados aplicando métodos 
+númericos. O código abaixo ilustra como obter os dois intervalos para uma 
+amostra, obtida por simulação. Para este intervalo, usamos o argumento 
+`weights`, pois sem ele o intervalo iria ser estreito demais,
+correspondente a $mn$ observações.
+
+```{r}
+# Especificando uma v.a. binomial.
+p <- 0.08 # Fração de itens não conformes na população.
+n <- 50   # Tamanho das amostras retiradas.
+m <- 1000 # Número de amostras para fazer a carta de controle.
+
+# Gerando uma séria de v.a. binomiais.
+set.seed(456)
+x <- rbinom(n = m, size = n, prob = p)
+
+# Quantil na normal para fazer os limites de controle.
+qn <- 3
+pn <- pnorm(qn * c(-1, 1))
+
+# Média das frações não conformes nas amostras.
+fr <- x/n
+p0 <- mean(fr)
+
+# Limites de controle baseados na aproximação normal.
+LCa <- p0 + c(LIC = -1, LC = 0, LSP = 1) * qn * sqrt(p0 * (1 - p0)/n)
+LCa
+
+# Limites de controle baseados na verossimilhança.
+m0 <- glm(cbind(x, n - x) ~ 1, family = binomial, weights = 1/rep(m, m))
+LCp <- binomial()$linkinv(c(coef(m0),
+                            confint(m0, level = 1 - 2 * pn[1])))
+LCp
+
+plot(fr, ylim = extendrange(c(fr, LCa, LCp)),
+     ylab = "Fração de itens não conformes",
+     xlab = "Número de amostra")
+abline(h = LCa, lty = c(2, 1, 2), col = 2)
+abline(h = LCp, lty = c(1, 2, 2), col = 4)
+
+# Comprimento dos intervalos.
+diff(LCa[c(1, 3)])
+diff(LCp[c(2, 3)])
+
+# Frequência de pontos abaixo, entre e acima dos limites.
+prop.table(table(findInterval(x = fr, vec = LCa[c(1, 3)])))
+prop.table(table(findInterval(x = fr, vec = LCp[c(2, 3)])))
+```
+
+Embora os dois intervalos tenham a mesma confiança e praticamente o
+mesmo comprimento, os limites são diferentes. O intervalo de verossimilhança 
+não é simétrico em relação à estimativa pontual da fração de itens defeituosos,
+e a sua construção não permite valores para os intervalos fora do espaço 
+paramétrico de $p \in (0,1)$. A assimetria do intervalo parece ser mais 
+compatível com a distribuição amostral de $p$, que só é simétrica quando
+$p = 0.5$. Por outro lado, apenas o intervalo assintótico teve pontos acima do 
+limite superior, enquanto que o intervalo de verossmilhança só sai do intervalo
+no sentido para baixo.
+
+Não podemos dizer qual dos dois tipos de intervalo tem melhor desempenho
+quando usado para o monitoramento em controle de qualidade. Um estudo de
+simulação, devidamente planejado para medir o efeito do tamanho de
+amostra ($n$), do valor de $p$ e do tamanho de série ($m$) pode revelar
+qual deles é mais eficaz para o monitoramento de processos.
+
+<!--------------------------------------------->
+[intervalo de baseado na verossimilhança]: http://data.princeton.edu/wws509/notes/a2s4.html

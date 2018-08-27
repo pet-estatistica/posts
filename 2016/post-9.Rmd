@@ -1,0 +1,53 @@
+% Pesquisa de Opinião PET-Estatística
+% Jhenifer
+
+
+No primeiro semestre de 2015, o PET-Estatística, a fim de ter uma visão 
+dos graduandos sobre o Programa e assim direcionar suas atividades, 
+decidiu aplicar uma pesquisa de opinião aos alunos da graduação do curso 
+de Estatística. Havia aproximadamente 190 alunos matriculados, sendo 
+estes, alunos ingressos de 2008 a 2015 totalizando 94 respondentes.
+
+O questionário é composto por 16 atividades nas quais os respondentes 
+deveriam assinalar se as mesmas eram desenvolvidas, não eram ou se o PET 
+deveria realizá-las e uma pergunta dicotômica se o respondente 
+participaria ou não do PET-Estatística.
+
+O gráfico abaixo apresenta a frequência relativa dos respondentes 
+dividido pelas 16 atividades.
+
+![](/figures/grafico.png)
+
+Das 16 atividades presentes na pesquisa, o PET-Estatística realiza 9, 
+sendo elas: organização de eventos, atividades culturais, participação 
+em eventos, confraternização com os demais alunos da graduação e
+professores, seminários periódicos, minicursos e iniciação científica,
+onde cada petiano elabora uma pesquisa individual de seu interesse. Não 
+realizamos auxílio à coordenação de curso no que tange aos assuntos 
+administrativos, mas entre as atividades realizadas também estão a 
+organização do estande de Estatística na Feira de Cursos e Profissões e 
+a aula inaugural do Processo Seletivo Estendido (PSE), as quais o PET 
+tem satisfação em organizar em conjunto com a coordenação do curso, 
+sendo estas realizadas todo ano. Das atividades que o PET não realiza 
+observou-se respostas positivas na pesquisa, um equívoco provocado,
+talvez, pela prestatividade de seus integrantes em ajudar seus colegas 
+de graduação. As atividades do Programa são voltadas para ensino, 
+pesquisa e extensão e não compreendem auxílio de monitoria, prestação de 
+serviços etc.
+
+Mesmo que em algumas atividades as porcentagens são quase as mesmas, é
+notável que a maioria dos respondentes estão cientes das atividades que 
+o PET realiza. E se olharmos para o total de atividades que o PET 
+deveria fazer de acordo com as respostas, é válido dizer que é necessário
+tomar algumas medidas para melhorar a visibilidade do grupo, atrair 
+participantes em seus projetos e consequentemente mais integrantes para o
+Programa.
+
+Além da lista de atividades, a pesquisa conta com a seguinte pergunta 
+dicotômica: "Você participaria do PET-Estatística?". O curso de
+Estatística é noturno e muitos alunos trabalham durante o dia, 
+infelizmente no mesmo horário que o grupo realiza suas atividades, este 
+possivelmente é o principal motivo de 60% das respostas serem negativas. 
+Porém, na tentativa de mudar este quadro, o grupo está com horários 
+flexíveis de acordo com a necessidade de cada interessado em ingressar 
+no Programa PET.

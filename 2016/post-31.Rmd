@@ -1,0 +1,50 @@
+% R versus SAS
+% Bruna Davies Wundervald
+
+Tanto como estudantes quanto como profissionais, nós estatísticos temos a
+necessidade de utilizar softwares em nossas atividades. A maioria das análises
+que conduzimos são muito mais rápidas quando feitas com auxílio computacional,
+além de que isso passa a ser mandatório quando o banco de dados não é pequeno.
+Estes softwares, por sua vez, podem servir para desde diagnósticos simples até
+as modelagens mais modernas e avançadas, assim como podem ser pagos ou de
+licença livre.
+
+Nos meios estatísticos existem discussões sobre qual destes aplicativos
+é mais eficaz. Algumas pessoas acabam levando estas questões até mesmo
+para o lado pessoal. Neste texto, vamos comentar sobre o `SAS` e o `R`, dois softwares
+que estão entre os mais utilizados na estatística e ciências afins. O
+primeiro é de licença paga e é amplamente empregado em grandes empresas, e o
+segundo é livre (GNU), usado por todos aqueles que têm vontade e disposição.
+
+O `R` é pleno de pontos fortes. Ele é altamente compreensivo estatisticamente.
+Isto é, nele encontramos tudo que já existe na estatística somado a tudo
+que está sendo criado/desenvolvido, todos os dias, a todo momento. A curva de
+criação de pacotes no `R` cresce exponencialmente com o tempo. É um
+ambiente de trabalho livre, tanto na questão da licença quanto
+como na da análise que se pretende fazer. A comunidade de usuários deste
+software, que é extremamente unida, é também muito competente. Surpreende a
+capacidade, rapidez e paciência destas pessoas em ajudar e resolver problemas
+que não são seus. Isso fica muito claro quando observamos a quantidade de sites,
+blogs e fóruns de ajuda e compartilhamento de informações sobre o `R`.
+
+Porém, nada é perfeito. O `R` apresenta alguns problemas quando se trata de lidar
+com bases de dados extremamente grandes. Essa é uma das justificativas mais
+fortes para a sua substituição pelo `SAS` nas corporações. O `SAS`, que é pago,
+é um software voltado para a manipulação de bases enormes, muito comuns nas
+empresas aonde ele é utilizado. Pelo fato de sua licença não ser livre, a
+empresa que o desenvolve é responsável pela segurança e suporte aos usuários,
+o que também é muito valorizado no momento da escolha deste programa.
+Em outras palavras, a empresa que usa precisa ter, obrigatoriamente, a quem recorrer
+quando algum problema surgir. Mas o `SAS`, as contrário do `R`, possui várias
+limitações. Claro que, além de suas análises padrões, diversas *macros* podem
+ser construídas. Mas elas não podem ser compartilhadas entre empresas, e,
+geralmente, nem entre diferentes setores da mesma empresa, o que dificulta
+a integração entre os usuários e a ampliação do escopo de trabalho deste software.
+
+A intenção aqui não é concluir qual dos dois é mais eficiente. Ambos apresentam
+vantagens e desvantagens, dependendo de como são utilizados. O `R` acaba sendo
+mais efetivo no meio acadêmico, de pesquisa e empresarial desde que não precise
+lidar com bases enormes. Já o `SAS` é mais voltado para o meio corporativo pela
+sua capacidade de processamento e suporte. Mesmo assim, vale comentar que o `R`
+vem ganhando cada vez mais espaço, especialmente pela autonomia que concede ao
+programador.

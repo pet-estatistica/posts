@@ -1,0 +1,294 @@
+"Município";"Taxa de analfabetismo"
+"420005 Abdon Batista";10,8
+"420010 Abelardo Luz";11,4
+"420020 Agrolândia";5,6
+"420030 Agronômica";4,9
+"420040 Água Doce";6,3
+"420050 Águas de Chapecó";7,1
+"420055 Águas Frias";10,0
+"420060 Águas Mornas";4,8
+"420070 Alfredo Wagner";8,6
+"420075 Alto Bela Vista";3,1
+"420080 Anchieta";6,4
+"420090 Angelina";9,2
+"420100 Anita Garibaldi";12,3
+"420110 Anitápolis";9,3
+"420120 Antônio Carlos";3,9
+"420125 Apiúna";5,2
+"420127 Arabutã";2,9
+"420130 Araquari";5,6
+"420140 Araranguá";4,3
+"420150 Armazém";5,1
+"420160 Arroio Trinta";6,8
+"420165 Arvoredo";9,9
+"420170 Ascurra";3,8
+"420180 Atalanta";4,9
+"420190 Aurora";5,3
+"420195 Balneário Arroio do Silva";4,9
+"420205 Balneário Barra do Sul";3,9
+"420200 Balneário Camboriú";1,3
+"420207 Balneário Gaivota";5,7
+"421280 Balneário Piçarras";4,3
+"420208 Bandeirante";9,0
+"420209 Barra Bonita";13,8
+"420210 Barra Velha";4,6
+"420213 Bela Vista do Toldo";5,7
+"420215 Belmonte";9,8
+"420220 Benedito Novo";3,7
+"420230 Biguaçu";4,6
+"420240 Blumenau";1,7
+"420243 Bocaina do Sul";11,6
+"420250 Bom Jardim da Serra";8,5
+"420253 Bom Jesus";10,4
+"420257 Bom Jesus do Oeste";8,4
+"420260 Bom Retiro";9,6
+"420245 Bombinhas";3,5
+"420270 Botuverá";5,3
+"420280 Braço do Norte";3,9
+"420285 Braço do Trombudo";2,7
+"420287 Brunópolis";12,6
+"420290 Brusque";2,4
+"420300 Caçador";5,7
+"420310 Caibi";7,9
+"420315 Calmon";13,0
+"420320 Camboriú";4,3
+"420330 Campo Alegre";4,5
+"420340 Campo Belo do Sul";13,0
+"420350 Campo Erê";13,6
+"420360 Campos Novos";5,6
+"420370 Canelinha";7,1
+"420380 Canoinhas";3,6
+"420325 Capão Alto";10,2
+"420390 Capinzal";5,5
+"420395 Capivari de Baixo";3,8
+"420400 Catanduvas";5,5
+"420410 Caxambu do Sul";10,5
+"420415 Celso Ramos";10,2
+"420417 Cerro Negro";15,9
+"420419 Chapadão do Lageado";7,3
+"420420 Chapecó";4,5
+"420425 Cocal do Sul";2,7
+"420430 Concórdia";3,6
+"420435 Cordilheira Alta";4,2
+"420440 Coronel Freitas";8,8
+"420445 Coronel Martins";11,5
+"420455 Correia Pinto";9,0
+"420450 Corupá";2,8
+"420460 Criciúma";3,0
+"420470 Cunha Porã";4,3
+"420475 Cunhataí";3,7
+"420480 Curitibanos";7,1
+"420490 Descanso";5,2
+"420500 Dionísio Cerqueira";10,7
+"420510 Dona Emma";4,3
+"420515 Doutor Pedrinho";4,8
+"420517 Entre Rios";12,2
+"420519 Ermo";6,6
+"420520 Erval Velho";8,1
+"420530 Faxinal dos Guedes";6,1
+"420535 Flor do Sertão";9,9
+"420540 Florianópolis";1,9
+"420543 Formosa do Sul";5,8
+"420545 Forquilhinha";3,5
+"420550 Fraiburgo";5,7
+"420555 Frei Rogério";9,3
+"420560 Galvão";16,5
+"420570 Garopaba";7,5
+"420580 Garuva";5,7
+"420590 Gaspar";2,4
+"420600 Governador Celso Ramos";7,0
+"420610 Grão Pará";4,0
+"420620 Gravatal";4,8
+"420630 Guabiruba";3,0
+"420640 Guaraciaba";5,9
+"420650 Guaramirim";2,6
+"420660 Guarujá do Sul";5,9
+"420665 Guatambú";10,8
+"420670 Herval d'Oeste";4,8
+"420675 Ibiam";5,6
+"420680 Ibicaré";5,8
+"420690 Ibirama";5,1
+"420700 Içara";3,8
+"420710 Ilhota";5,4
+"420720 Imaruí";12,6
+"420730 Imbituba";4,8
+"420740 Imbuia";5,6
+"420750 Indaial";2,8
+"420757 Iomerê";2,8
+"420760 Ipira";3,8
+"420765 Iporã do Oeste";3,8
+"420768 Ipuaçu";11,3
+"420770 Ipumirim";4,9
+"420775 Iraceminha";7,0
+"420780 Irani";6,3
+"420785 Irati";11,7
+"420790 Irineópolis";7,1
+"420800 Itá";5,9
+"420810 Itaiópolis";4,6
+"420820 Itajaí";2,9
+"420830 Itapema";2,7
+"420840 Itapiranga";3,2
+"420845 Itapoá";3,7
+"420850 Ituporanga";4,5
+"420860 Jaborá";6,9
+"420870 Jacinto Machado";7,3
+"420880 Jaguaruna";6,6
+"420890 Jaraguá do Sul";1,6
+"420895 Jardinópolis";8,3
+"420900 Joaçaba";2,8
+"420910 Joinville";2,2
+"420915 José Boiteux";6,3
+"420917 Jupiá";9,3
+"420920 Lacerdópolis";5,0
+"420930 Lages";4,9
+"420940 Laguna";5,9
+"420945 Lajeado Grande";7,2
+"420950 Laurentino";3,6
+"420960 Lauro Muller";5,6
+"420970 Lebon Régis";12,2
+"420980 Leoberto Leal";10,5
+"420985 Lindóia do Sul";5,6
+"420990 Lontras";5,8
+"421000 Luiz Alves";5,1
+"421003 Luzerna";1,7
+"421005 Macieira";10,0
+"421010 Mafra";2,8
+"421020 Major Gercino";7,1
+"421030 Major Vieira";6,2
+"421040 Maracajá";5,7
+"421050 Maravilha";4,9
+"421055 Marema";8,3
+"421060 Massaranduba";3,2
+"421070 Matos Costa";12,1
+"421080 Meleiro";5,3
+"421085 Mirim Doce";7,0
+"421090 Modelo";6,1
+"421100 Mondaí";4,2
+"421105 Monte Carlo";13,2
+"421110 Monte Castelo";7,6
+"421120 Morro da Fumaça";5,1
+"421125 Morro Grande";5,7
+"421130 Navegantes";4,0
+"421140 Nova Erechim";5,2
+"421145 Nova Itaberaba";8,0
+"421150 Nova Trento";3,1
+"421160 Nova Veneza";3,7
+"421165 Novo Horizonte";11,8
+"421170 Orleans";3,9
+"421175 Otacílio Costa";6,8
+"421180 Ouro";3,6
+"421185 Ouro Verde";11,6
+"421187 Paial";8,9
+"421189 Painel";9,0
+"421190 Palhoça";3,7
+"421200 Palma Sola";9,3
+"421205 Palmeira";11,4
+"421210 Palmitos";6,9
+"421220 Papanduva";7,1
+"421223 Paraíso";10,1
+"421225 Passo de Torres";7,2
+"421227 Passos Maia";9,1
+"421230 Paulo Lopes";10,7
+"421240 Pedras Grandes";4,1
+"421250 Penha";4,1
+"421260 Peritiba";2,1
+"421270 Petrolândia";7,1
+"421290 Pinhalzinho";4,7
+"421300 Pinheiro Preto";4,9
+"421310 Piratuba";5,3
+"421315 Planalto Alegre";12,6
+"421320 Pomerode";1,5
+"421330 Ponte Alta";10,2
+"421335 Ponte Alta do Norte";11,0
+"421340 Ponte Serrada";8,9
+"421350 Porto Belo";5,1
+"421360 Porto União";3,8
+"421370 Pouso Redondo";5,6
+"421380 Praia Grande";8,4
+"421390 Presidente Castello Branco";5,3
+"421400 Presidente Getúlio";3,0
+"421410 Presidente Nereu";10,4
+"421415 Princesa";9,2
+"421420 Quilombo";8,0
+"421430 Rancho Queimado";6,6
+"421440 Rio das Antas";4,6
+"421450 Rio do Campo";5,2
+"421460 Rio do Oeste";4,5
+"421480 Rio do Sul";3,0
+"421470 Rio dos Cedros";3,3
+"421490 Rio Fortuna";2,5
+"421500 Rio Negrinho";3,8
+"421505 Rio Rufino";8,2
+"421507 Riqueza";7,6
+"421510 Rodeio";3,8
+"421520 Romelândia";10,1
+"421530 Salete";4,5
+"421535 Saltinho";13,0
+"421540 Salto Veloso";6,0
+"421545 Sangão";7,2
+"421550 Santa Cecília";8,3
+"421555 Santa Helena";9,5
+"421560 Santa Rosa de Lima";3,4
+"421565 Santa Rosa do Sul";5,6
+"421567 Santa Terezinha";5,8
+"421568 Santa Terezinha do Progresso";11,5
+"421569 Santiago do Sul";10,4
+"421570 Santo Amaro da Imperatriz";4,8
+"421580 São Bento do Sul";2,8
+"421575 São Bernardino";11,5
+"421590 São Bonifácio";3,7
+"421600 São Carlos";4,7
+"421605 São Cristovão do Sul";10,8
+"421610 São Domingos";9,3
+"421620 São Francisco do Sul";3,7
+"421630 São João Batista";3,4
+"421635 São João do Itaperiú";6,2
+"421625 São João do Oeste";0,9
+"421640 São João do Sul";7,7
+"421650 São Joaquim";5,5
+"421660 São José";2,3
+"421670 São José do Cedro";6,1
+"421680 São José do Cerrito";12,7
+"421690 São Lourenço do Oeste";6,5
+"421700 São Ludgero";3,6
+"421710 São Martinho";4,7
+"421715 São Miguel da Boa Vista";10,5
+"421720 São Miguel do Oeste";4,0
+"421725 São Pedro de Alcântara";7,5
+"421730 Saudades";3,5
+"421740 Schroeder";2,4
+"421750 Seara";5,0
+"421755 Serra Alta";5,0
+"421760 Siderópolis";4,0
+"421770 Sombrio";5,8
+"421775 Sul Brasil";13,2
+"421780 Taió";5,1
+"421790 Tangará";6,3
+"421795 Tigrinhos";9,1
+"421800 Tijucas";5,9
+"421810 Timbé do Sul";7,8
+"421820 Timbó";2,0
+"421825 Timbó Grande";9,2
+"421830 Três Barras";6,1
+"421835 Treviso";2,4
+"421840 Treze de Maio";5,1
+"421850 Treze Tílias";3,7
+"421860 Trombudo Central";3,2
+"421870 Tubarão";3,6
+"421875 Tunápolis";2,7
+"421880 Turvo";5,0
+"421885 União do Oeste";8,5
+"421890 Urubici";4,5
+"421895 Urupema";6,1
+"421900 Urussanga";3,4
+"421910 Vargeão";8,5
+"421915 Vargem";10,6
+"421917 Vargem Bonita";6,7
+"421920 Vidal Ramos";7,4
+"421930 Videira";4,4
+"421935 Vitor Meireles";8,2
+"421940 Witmarsum";4,2
+"421950 Xanxerê";5,3
+"421960 Xavantina";7,4
+"421970 Xaxim";5,5
+"421985 Zortéa";5,3

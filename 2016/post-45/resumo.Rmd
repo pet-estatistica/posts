@@ -1,0 +1,47 @@
+---
+title: >
+  Parametrizações Interpretáveis em Modelos Não Lineares
+author: "Walmes M. Zeviani"
+key-words: >
+  Verossimilhança. Método delta. Medidas de curvatura. Efeitos
+  mistos. van Genuchten.
+output:
+  pdf_document:
+    template: resumo_template.tex
+---
+
+Uma das vantagens dos modelos de regressão não linear é ter
+interpretação para os parâmetros. Em muitas situações, parâmetros de
+interesse, expressos como função dos parâmetros do modelo, são
+quantidades sujeitas à investigação. Surge então a preocupação de como
+fazer inferência sobre eles. Para isso, o método delta, a simulação
+Monte Carlo e procedimentos *bootstrap* são alternativas
+frequentes. Além disso, uma reparametrização pode ser aplicada ao modelo
+de forma à representar tais parâmetros de interesse. Além de melhorar a
+interpretação, a presença do parâmetro alvo estende as possibilidades
+com relação a especificação de modelos e inferência estatística. O
+objetivo com esse trabalho é sistematizar o procedimento de aplicar
+reparametrizações. Ênfase foi dada em modelos não lineares considerados
+em aplicações dentro das Ciências Agrárias. Uma lista com 17 modelos
+reparametrizados é fornecida. No primeiro estudo de caso, o nível de
+dano econômico da desfolha no algodoeiro foi avaliado com os seguintes
+objetivos: 1) propor uma parametrização de modelo que representasse o
+nível de dano econômico, 2) avaliar parametrizações alternativas por
+meio de suas propriedades, onde considerando medidas de não
+linearidade, 3) aplicar inferência baseada em verossimilhança, 4)
+selecionar um modelo para descrever a relação entre produção e desfolha
+do algodoeiro em função do estágio fenológico. O modelo reparametrizado
+apresentou melhores propriedades nos estágios fenológicos com
+pronunciada relação não linear. No restante, as medidas de curvatura, as
+correlações dos estimadores e os gráficos de perfil de verossimilhança
+indicaram que um sub-modelo deveria ser considerado. No segundo estudo
+de caso, objetiva-se verificar o efeito da posição de amostragem e
+profundidade do solo sobre os parâmetros I (*infletion*) e S (*slope*)
+da curva de retenção de água do solo. Para isso 1) considerou-se ANOVA
+simples e 2) ANOVA ponderada pela variância das estimativas desses
+parâmetros em cada unidade experimental em comparação com 3) o uso de
+modelos não lineares de efeitos mistos em uma parametrização
+desenvolvida. Nenhum dos métodos alternativos de análise foi superior ao
+modelo não linear de efeitos mistos na parametrização desenvolvida, que
+apresentou intervalos de confiança mais estreitos para os parâmetros e
+apontou efeito de posição e profundidade de coleta.

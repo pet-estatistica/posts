@@ -1,0 +1,32 @@
+% O Demônio de Laplace
+% Vinicius César
+
+Pierre-Simon Laplace (1749-1827) foi um grande físico, matemático e
+filósofo francês, e contribuiu de maneira esplendorosa para a Ciência.
+Em 1814, Laplace levantou uma ideia que daria início a futuros debates
+sobre o caos, o acaso e o determinismo em um ensaio de probabilidades.
+De maneira coloquial, o demônio de Laplace seria uma entidade com a
+capacidade de possuir pleno conhecimento sobre todos os fatos existentes.
+Em suas próprias palavras, descritas em Ensaio filosófico de
+Probabilidades, Laplace ressalta:
+
+“Devemos considerar o estado presente do universo como efeito dos seus
+estados passados e como causa dos que se vão seguir. Suponha-se uma
+inteligência que pudesse conhecer todas as forças pelas quais a natureza
+é animada e o estado em um instante de todos os objetos - uma
+inteligência suficientemente grande que pudesse submeter todos esses
+dados à análise -, ela englobaria na mesma fórmula os movimentos dos
+maiores corpos do universo e também dos menores átomos: nada lhe seria
+incerto e o futuro, assim como o passado, estaria presente ante os 
+seus olhos.”
+
+A “inteligência suficientemente grande” elencada na citação passou a ser 
+conhecida como “demônio de Laplace”. Nesse período, leis determinísticas 
+e mensuráveis (previsíveis) predominavam sobre a sociedade. Segundo 
+Popper (1988), a concepção determinista afirma que todos os acontecimentos 
+do mundo são pré-estabelecidos ou que o futuro é fixo como o passado. Em 
+oposição, a concepção indeterminista diz que existem acontecimentos que 
+não são pré-estabelecidos, ou ainda, que o futuro não é fixo. No trecho de
+Laplace, fica claro que previsões científicas não dependem do
+conhecimento das leis naturais; exigem, além disso, um conhecimento das
+circunstâncias do sistema em um predisposto instante.

@@ -1,0 +1,209 @@
+% Recursos do Git para Entender o Histórico
+% Walmes Zeviani
+
+O *labestData*, atual projeto coletivo do PET, é um pacote R com
+conjuntos de dados para ensino de Estatística. Ele está sendo desenvolvido
+sob o sistema de controle de versões Git, por todos os petianos, contando com o
+apoio de vonlutários e professores. Em uma matéria anterior
+(<http://www.pet.est.ufpr.br>) foram apresentados alguns detalhes sobre o 
+projeto, sem aprofundar no uso do Git.
+
+O *workflow* do *labestData* é baseado em ramos (*branching workflow*). 
+Nesse modelo, os colaboradores criam ramos para trabalhar e
+a cada semana eles são incorporados ao ramo principal.
+
+Em resumo, as etapas são:
+
+  1. O colaborador abre um *issue* no projeto, detalhando o trabalho da
+     semana. Vamos considerar que esse colaborador se chama Fulano e que o
+     número do *issue* é 100.
+  2. Em seu computador, o colaborador atualiza sua cópia do ramo *devel*,
+     ramo principal do projeto, que recebe contribuições dos
+     ramos de demanda.
+  3. A partir do *devel* atual, o colaborador cria o ramo `fulano100`
+     para desenvolver aquilo que descreveu ao criar o *issue* 100 no
+     GitLab.
+  4. O colaborador, então, desenvolve seu ramo, commitando e subindo
+     regularmente suas contribuições. Por fim, quando concluídas, ele
+     faz um *merge request*. Na descrição do *merge request*, ele
+     descreve tudo o que de fato fez - ou não fez e porquê.
+  5. Agora o ramo `fulano100` aguarda a avaliação do *merger*, a pessoa
+     responsável por avaliar, corrigir ou solicitar correções e fazer o
+     merge (ou seja, incorporar as contribuições do colaborador em questão ao
+     que já foi feito e está salvo no Git) para o ramo *devel*.
+
+Em um projeto aonde você trabalha sozinho, sem fazer ramos, basicamente
+usa-se apenas 4 comandos: `git add`, `git commit`, `git push` e `git
+pull`. Por outro lado, em projetos coletivos, utiliza-se ramos para que os
+colaboradores trabalhem simultaneamente em linhas independentes. Para isso, 
+é adotado um padrão de nomeação de ramos, que não é apenas um detalhe, já que
+facilita o acompanhamento do projeto, pois é possível identificar de
+imediato o responsável e *issue* correspondente a cada ramo.
+
+Apesar disso, independente do estilo de nomeação no *branching workflow*,
+a medida que o projeto cresce, as ramificações de tornam muitas, entrelaçadas,
+difíceis de percorrer. O `git log` puro e simples, que mostra o
+histórico de desenvolvimento, pode passar a ser insuficiente para o *merger* ter
+uma rápida e precisa ideia das contribuições que ele precisa avaliar.
+
+Mas Git é uma ferramenta muito inteligente, que dispõe de comandos para exibir o
+histórico por autor, por intervalo de datas, por ramo. Com o
+conhecimento de tais recursos, fica fácil para o *merger* saber por
+onde deve começar. São sobre esses recursos que iremos falar a seguir, 
+exemplificando com aplicações no repositório do *labestData*.
+
+Para exibir os ramos do projeto usa-se o `git branch`. As flags `-l`
+(default), `-r` e `-a` mostram os ramos locais, remotos e todos,
+respectivamente. Para economizar espaço, abaixo está o resultado apenas do
+mais completo deles. O ramo atual está destacado pelo asterisco.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+# git branch
+# git branch -r
+git branch -a
+```
+
+A flag `-vv` (duplo verbose) identifica quais são os ramos remotos dos
+ramos locais. O Git por padrão cria ramos remotos com os mesmos nomes
+dos locais, mas o usuário pode fazer diferente.
+
+A flag `--merged` e `--no-merge` identifica os ramos que sofreram merges ou não,
+para o ramo onde você está (com o asterisco na frente). Mas detalhe: se `C` é o
+ramo atual e o ramo `A` aparece como resultado, não necessariamente houve um 
+merge de `A` para `C`. Pode ter ocorrido um merge de `A` para `B` e `C` ter 
+sido criado a partir de `B`. Ou seja, `C` herda os eventos dos seus ancestrais.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+# git branch -vv
+# git branch --no-merged
+git branch --merged
+```
+
+O comando para exibição do histórico é o `git log`. A flag `-n 2` vai
+exibir apenas os dois últimos commits do projeto. Com `--oneline`,
+apenas o SHA1 e a mensagem de commit são exibidas e com `--stat`,
+estatísticas de arquivos modificados são dadas. A flag `-p` (print)
+mostra as diferença nos arquivos para cada um dos *commits*. Atenção:
+com `-p` a saída é longa.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+# git log -n 2
+# git log -n 2 --oneline
+# git log -n 2 -p
+git log -n 2 --stat
+```
+
+A exibição pelas datas pode considerar um ou dois extremos (início e
+fim). As datas podem ser usadas tanto de forma absoluta (usual) quanto
+relativa, o que facilita bastante no *workflow* do labestData, por exemplo,
+em que o tempo de vida dos ramos é de uma semana.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+# git log --after="2016-03-29"
+# git log --after="yesterday"
+# git log --since="2.weeks"
+# git log --since="2.days"
+# git log --before="2016-03-01" --name-status
+git log --since="MAR 07 2016" --until="MAR 08 2016" --oneline
+```
+
+O `git log` talvez seja o comando do Git com mais recursos. Uma forma
+interessante de usar é com a flag `--graph`, que faz uma arte ASCII para
+mostrar os ramos e suas conexões. Com `pretty=format:<placeholders>` é
+possível detalhar quais e como as informações serão exibidas. Os
+sinalizadores (*placeholders*) que correspondem a cada informação estão
+descritos na [documentação do Git]. De tão útil que esse comando é, deve
+ser transformado em *alias* no [`.bashrc`] para ser usado o tempo todo.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+git log -n 15 --graph --date=short\
+    --pretty=format:'%h %d [%an] %ad %s'
+```
+
+Na situação contexto do *labestData*, o *merger* precisa avaliar um
+ramo que é basicamente visitar/editar arquivos. Vamos considerar que o
+ramo sob avaliação é o `walmes11`. Então, ele precisa saber: quais arquivos 
+foram modificados no ramo? Mas se o ramo foi criado do `devel`, ele
+herda todos os `commits`. Então quais arquivos modificados foram 
+exclusivamente naquele ramo, sem considerar a herança do `devel`?
+
+O comando abaixo mostra o SHA1 do *commit* ancestral comum mais recente
+dos ramos `devel` e `walmes11`. Veremos ainda como pedir o histórico a
+partir do *commit* ancestral.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+git merge-base devel walmes11
+```
+
+O `git log` com a flag `--walk-reflogs` exibe a atividade do ramo. O que
+ele mostra está além dos *commits* porque aparecem também ações de
+`pull`, `push`, `checkout`, etc. Note que o *commit* com mensagem
+*Created from HEAD* é o *commit* ancestral de `devel` e `walmes11`. Ou
+seja, é nesse ponto que ocorreu a ramificação.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+# git cherry -v devel walmes11
+git log --oneline --walk-reflogs walmes11
+```
+
+Para exibir a lista de arquivos modificados, que inclui os criados e
+removidos, usamos a flag `--name-status` para exibir na frente dos
+arquivos o tipo de alteração. Propositalmente, `--pretty=format:` não
+vai exibir nada porque está sem receber sinalizadores. Podemos
+acrescentar comandos do bash (`sort` e `uniq`) para simplificar o
+resultado.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+git log --name-status --pretty=format:\
+    $(git merge-base devel walmes11)..HEAD | sort | uniq
+```
+
+No projeto *labestData*, os scripts `.R` e `*.txt` são as prioridades de
+revisão, pois  eles contêm os dados e suas respectivas documentações. Por 
+outro lado, os arquivos de documentação (Rd) não são editados "à mão",  
+pois são criados pelo  próprio *roxygen2*. Os  arquivos `*.rda` são binários. 
+Sendo assim, filtrar pelo tipo de extensão de aquivo é conveniente.
+
+```{sh, engine="sh", comment=NA, echo=-(1)}
+cd ~/repos/labestData
+git log -2 --author=Walmes --name-only\
+    --pretty=format:'%ad: %s' -- *.R *.txt
+```
+
+No **Capítulo 6 - Ferramentas gráficas** da [Apostila Git] mostramos
+como usar as interfaces `gitk`, `gitg` e `gitx` para visualização do
+histórico do projeto. No `gitk`, o menu `View > New view` permite
+aplicar filtros no histórico, tal como é feito pelo terminal. As
+interfaces, assim como os comandos Git, são recursos que permitem melhor
+aproveitar o Git.
+
+Semelhante às interfaces, os serviços de hospedagem, como o GitLab e
+GitHub, têm embutidas formas equivalentes de apresentar o histórico. No
+GitLab, por exemplo, no menu `Commits`, existem as abas `Commits`, `Network`,
+`Compare`, `Branches` e `Tags`. Além disso, na página de descrição do
+*merge resquest*, as abas `Discussion`, `Commits`, `Builds` e `Changes`
+também exibem informações relevantes.
+
+O desenvolvimento de projetos coletivos de software é impraticável sem a
+um sistema de controle de versões (SCV). Nesses modelos, alguém será
+responsável pelos *merges* e vai precisar passar um pente fino para
+manter a qualidade do projeto. Os recursos do Git que foram apresentados
+podem ser combinados e expandidos, pois existem muitas possibilidades.  A
+intenção foi mostrar os que são mais utilizados nas verificações,
+para que sejam feitas de forma eficiente, completa, rápida e sem deixar
+nada para trás.
+
+<!--------------------------------------------->
+
+[*labestData*]: https://gitlab.c3sl.ufpr.br/pet-estatistica/labestData
+[`.bashrc`]: https://gitlab.c3sl.ufpr.br/walmes/linux-config/blob/master/dotbashrc.sh#L54
+[documentação do Git]: https://git-scm.com/docs/pretty-formats
+[Apostila Git]: https://gitlab.c3sl.ufpr.br/pet-estatistica/apostila-git

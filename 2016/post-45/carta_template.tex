@@ -1,0 +1,30 @@
+\documentclass[a4paper, 11pt]{letter}
+\usepackage[brazil]{babel}
+
+% Para usar fonte escrita a mão.
+\usepackage{calligra,lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareRobustCommand{\normalfont}{\calligra}
+\AtBeginDocument{\normalfont}
+
+\begin{document}
+\begin{letter}{}
+
+  \opening{$para$,}
+
+  \hspace{3cm}
+
+  $body$
+
+  \vspace{0.3cm}
+  \hspace{1cm}
+  $if(fechamento)$
+  \noindent $fechamento$
+  $endif$
+  \vspace{0.3cm}
+
+  \hfill $de$.
+
+\end{letter}
+\end{document}

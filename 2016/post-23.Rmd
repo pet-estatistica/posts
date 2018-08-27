@@ -1,0 +1,102 @@
+% Customizando chunks de relatórios dinâmicos no R Markdown
+% Bruna Davies Wundervald
+
+O `Markdown` é uma ferramenta que permite a criação de documentos e 
+apresentações de forma fácil dentro do próprio R. Dentre os formatos que podem
+ser gerados os mais comuns são: `PDF`, `HTML`, `Beamer`, `MS Word`, entre outros.
+
+O R Markdown é capaz de incorporar partes de texto com códigos para criação um 
+documento. Esses códigos, podem ser apresentados no relatório de forma completa
+junto com seu `output`; apenas partes do código com o `output`; só o `output` 
+ou sem ele, dependendo das intenções de quem está escrevendo. 
+
+Além disso, esses documentos geralmente têm a propriedade de ser 
+completamente reproduzíveis. 
+
+Os`chunks` alocam os blocos de código dentro de um documento R Markdown. Por 
+*default*, os `chunks` são automaticamente incluídos no documento final pelo R. 
+Caso contrário, precisamos utilizar a opção `echo= FALSE` para não mostrar nada 
+do código, ou selecionar algumas linhas como por exemplo, `echo= c(1, 3:4)`. 
+Nestes casos, os resultados são sempre impressos. Usando a opção `include= FALSE`, 
+tanto código como resultados não aparecerão, mas o  `chunk` é validado. 
+Ao não existir a necessidade de validar o `chunk`, a opção  apropriada é a 
+`eval= FALSE`, assim o código não será nem ao menos compilado.
+
+Para alterações nos resultados, pode-se utilizar o argumento `results`, que irá
+receber respostas como: 
+
+- `hold`: mostra os resultados do chunk apenas ao final de todo o código;
+- `hide`: não mostra os resultados;
+- `markup`: modo *default* de apresentar os resultados; 
+- `asis`: usado geralmente ao printar tabelas, como uma `xtable`, por exemplo.
+
+Outras opções, são os argumentos que recebem como resposta `TRUE` ou `FALSE`:
+- `message`: mostra as mensagens geradas pelos códigos; 
+- `error`: mostra mensagens de erro; 
+- `warning`: mostra mensagens de `warning`;
+- `tidy`: serve para "arrumar" a forma de como o código é mostrado, de acordo com
+o pacote `formatR`;
+- `prompt`: adiciona um '>' no ínicio de cada linha de código;
+- `highlight`: serve para destacar o código;
+- `cache`: se `TRUE`, os resultados serão armazenados em cache, para serem 
+reutilizados cada vez que o documento for gerado (pelo knitr). Os resultados 
+só são alterados quando o chunk é alterado. 
+
+Já para alterações gráficas, podemos utilizar opções como:
+
+- `dev`: muda a compilação do formato do gráfico. O *default* é .png;
+- `background`: muda a cor do plano de fundo de outputs em Latex;
+- `fig.show`: as opções são `asis`, `hold` e `hide`, que tem interpretações
+análogas as já citadas acima. Ainda há a opção `animate`, usada para criar 
+animações;
+- `fig.align`: formas de alinhamento de imagem (`lef`,`right` ou `center`).
+- `fig.cap`: adiciona texto abaixo das figuras geradas no chunk; 
+- `fig.height`: altera a altura das figuras; 
+- `fig.width`: altera a largura das figuras; 
+- `fig.lp`: prefixo a ser usado para *labels* em Latex; 
+- `fig.showtext`: chama o pacote `showtext`, que permite o uso de diferentes
+fontes nos gráficos;
+- `fig.asp`: usado para modificar o aspecto do gráfico;
+- `fig.keep`: usado para "escolher" quais gráficos serão mantido no documento
+final (`none`, `all`, `first`, `last` ou `high`); 
+- `out.extra`: opções extras para figuras, como estilo, ângulo, etc.
+
+Há várias outras opções que podem ser utilizadas, mas algumas delas servem
+para casos mais específicos. 
+
+Agora, iremos mostrar sobre a "reutilização de chunks".
+Essa função do R Markdown funciona da seguinte maneira: cria-se
+um `chunk` com um nome, que conterá as opções `eval= FALSE` e `echo= FALSE`.  
+Feito isto, esse `chunk` pode ser adicionado e validado em outros, usando a 
+opção `ref.label= "nome do chunk a ser incluído"`. Um exemplo seria assim:
+
+- Passo 1. 
+
+    {r exemplo, eval=FALSE, echo=FALSE}
+  
+    plot(cars)
+
+- Passo 2.
+
+    {r codigo, ref.label="exemplo"}
+
+    summary(cars)
+
+Com isso, o **plot(cars)** aparecerá somente no momento de validação do `chunk`
+chamado "codigo", e  ele será mostrado antes dos outros resultados. Este exemplo
+é extremamente simples e sem aparente utilidade, mas esta função, em códigos
+mais elaborados, pode ser bem aproveitada. 
+
+Além disso, com o R Markdown, podemos trabalhar com arquivos "filhos". 
+Essa opção no `chunk` é chamada de *child* a qual busca dentro do diretório em 
+que se está trabalhando, um documento `.Rmd` de interesse e o inclui no que está sendo 
+escrito. Exemplificando: 
+  
+{r filho, child='filho.Rmd'}
+
+Dado que `filho.Rmd` já é um arquivo R Markdown com conteúdo, e este, por sua
+vez, será incluído na "posição" aonde está o `chunk` no qual ele foi chamado.
+
+Mais informações sobre o básico do R Markdown podem
+ser encontradas no próprio [site](http://rmarkdown.rstudio.com/index.html) 
+desta ferramenta.

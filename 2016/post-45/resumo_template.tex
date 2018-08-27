@@ -1,0 +1,25 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage{amssymb, amsmath}
+\usepackage[margin=2cm]{geometry}
+
+\title{$title$}
+\author{$for(author)$$author$$sep$ \\ $endfor$}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+$body$
+
+\vspace{1ex}
+$if(key-words)$
+\noindent \textbf{Palavras-chave}: $key-words$
+$endif$
+
+\end{document}

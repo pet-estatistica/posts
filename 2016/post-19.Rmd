@@ -1,0 +1,49 @@
+% Responsabilidade Civil por Infecção Hospitalar
+% Jhenifer C. Veloso 
+
+Segundo o Ministério da Saúde, infecção hospitalar é toda infecção 
+adquirida após a admissão do paciente na Unidade Hospitalar e que se 
+manifesta durante a internação ou após a alta, quando esta puder ser 
+relacionada com a internação ou procedimentos hospitalares.
+
+Com o aumento nos números de infecção hospitalar, surge a 
+preocupação em saber como o Tribunal de Justiça do Paraná (TJPR) se 
+manifesta em casos de pedido de indenização por pacientes que sofreram 
+infecção hospitalar.
+
+Uma pesquisa realizada pela Comissão de Jurimetria da OAB PR, teve como 
+principal objetivo demonstrar como o judiciário tem se comportado para 
+julgar as ações relativas ao tema em questão. Tomando como base um 
+levantamento estatístico com relação ao número de acórdãos analisados.
+
+As principais variáveis analisadas nesta pesquisa foram: aplicação da 
+responsabilidade objetiva (sendo que para ocorrer o poder de indenizar, é 
+necessário reconhecer a responsabilidade objetiva), tipo de sentença 
+(procedente para os casos em que houve indenização e improcedente para 
+os que não houve o poder de indenizar), óbito (se o paciente com infecção 
+veio a óbito ou não) e valor indenizado (caso haja responsabilidade 
+objetiva).
+
+A pesquisa foi realizada em 40 acórdãos do TJPR e os resultados 
+descritivos estão apresentados a seguir:
+
+* 17 casos não tiveram aplicação e o principal fator alegado para isso 
+foi de que não há ambiente hospitalar livre de infecção, e que os níveis 
+de contaminação estavam abaixo da média mundial, de acordo com os 
+padrões fixados pela Organização Mundial de Saúde (OMS). E 22 das ações 
+tiveram aplicação obejtiva;
+
+* Quanto ao número de acórdãos procedentes e improcedentes, houveram 22 
+casos contra 18;
+
+* Dos 40 acórdãos analisados, 17 resultaram em óbito contra 23 ações sem
+óbito;
+
+* Das 17 ações com óbito, 7 foram procedentes e 10 improcedentes. Já das 
+ações com não ocorrência de óbito, 15 ações foram procedentes e 8 
+improcedentes;
+
+* O valor médio das indenizações foi de R$ 24.515,00;
+
+* O valor médio das indenizações nas ações em que ocorreu óbito e das 
+ações sem óbito foram de R$ 7.375,00 e R$ 17.140,00 respectivamente.

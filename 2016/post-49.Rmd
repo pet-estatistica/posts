@@ -1,0 +1,58 @@
+% Software gratuito vs Software livre
+% Igor Horrocks
+
+Antes de explicar a definição de cada um, é importante ressaltar que
+software livre não é sinônimo de software gratuito. A partir dessa
+informação, essa matéria tem como objetivo descrevê-los à parte, para
+então fixar suas diferenças.
+
+## Software gratuito
+
+O nome já é quase autoexplicativo. Software gratuito são todos os
+softwares que podem ser usados sem pagar. Entretanto, os usuários não
+têm acesso ao código fonte, o que impossibilita a modificação, o estudo
+ou a análise do programa. Em outras palavras, só pode ser utilizado da
+maneira como foi disponibilizado, podendo sofrer limitações em sua
+distribuição.
+
+Exemplos de softwares gratuitos: Acrobat Reader e Real Player.
+
+## Software livre
+
+O conceito de software livre é mais complexo, pois o aspecto de
+liberdade traz consigo uma série de requisitos e características.
+
+Diferentemente de softwares gratuito, softwares livres devem ser
+abertos, ou seja, ter liberdade para copiar, acessar, distribuir,
+modificar. Estudar o código fonte é a essência do software livre.
+Lembrando que tudo isso pode ser feito sem ter que pagar ou pedir
+permissão ao autor do programa.
+
+Para uma perfeita classificação de softwares livres, foram estabelecidas
+liberdades básicas pela Organização, sem fins lucrativos, *Free Software Foundation*. As quatro liberdades básicas são:
+
+* Liberdade de executar o programa, para qualquer propósito (liberdade
+n° 0).
+
+* Liberdade de estudar como o programa funciona, e adaptá-lo para suas
+necessidades (liberdade n° 1). Acesso ao código-fonte é pré-requisito
+para esta liberdade.
+
+* Liberdade de redistribuir cópias de modo que você possa ajudar ao seu
+próximo (liberdade n° 2).
+
+* Liberdade de aperfeiçoar o programa, e liberar os mesmos, de modo que
+toda a comunidade se beneficie (liberdade n° 3). Acesso ao código fonte
+é pré-requisito para esta liberdade.
+
+Exemplos de softwares livres: R, VLC e Linux.
+
+## Conclusão
+
+O software livre tem muitas vantagens em relação ao software
+proprietário, porque além dos custos reduzidos, seu código fonte aberto
+permite que cada usuário adapte o programa de acordo com suas
+necessidades. Essa característica também torna esses softwares mais
+flexíveis, o que permite um aprimoramento muito mais rápido quando
+comparado com softwares cujo código fonte é fechado - no qual os
+softwares gratuitos estão englobados. 

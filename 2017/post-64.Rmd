@@ -1,0 +1,33 @@
+% Estatística no esporte 
+% Lucka Kiohei Neves Maekawa
+
+O uso da estatística no esporte vem aumentando conforme o passar dos
+anos. Uma das aplicações é analisar as comissões técnicas para melhorar
+o desempenho dos seus times ou atletas. Mas é importante entender que,
+para obter tais resultados, é necessário uma análise adequada dos dados
+e que não basta apenas olhar os números.    
+A história do time de baseball Okland A’s retratada no filme Moneyball
+(ou O Homem que Mudou o Jogo, como ficou conhecido no Brasil) é o
+exemplo de como a estatística pode ser benéfica no esporte. No filme,
+Billy Beane, um ex-jogador de baseball que se tornou dirigente geral do
+Okland, usou basicamente a estatística na montagem do seu elenco. Naquela
+temporada, Okland A’s não conquistou o título nacional, porém, mesmo com
+orçamento muito inferior aos times de elite da liga americana,
+terminou entre os melhores do campeonato e mostrou uma evolução enorme
+comparada com a temporada passada.      
+Já a seleção brasileira de basquetebol não teve um bom desempenho no
+mundial de 2006. Ela teve a pior classificação da sua história no
+campeonato, amargurando o 17° lugar. Mas para quem olhar apenas os
+números da seleção no mundial ficará surpreendido ao ver que a seleção
+teve uma das maiores porcentagens de passes certos do campeonato e
+achará que a seleção não jogou tão mal, uma análise equivocada. Outro
+dado importante da seleção é que, o Brasil foi a seleção que perdeu mais
+ataques por não arremessar no tempo regular. Juntando todas as essas
+informações podemos obter uma análise correta. Uma das inúmeras
+conclusões que podemos ter é que, os jogadores da seleção tinham medo ou
+insegurança na hora de arremessar, então preferiam passar essa
+responsabilidade para o companheiro mais próximo, assim aumentando a
+taxa se passes certos e estourando o tempo de ataque.
+Com isso, podemos ver que a estatística só tem a acrescentar ao esporte,
+porém, isso só correrá se olharmos para os dados de uma maneira correta
+e que não adianta olhar apenas para os números.

@@ -1,0 +1,28 @@
+Semana Acadêmica de Estatística 2017
+Vinicius César 
+
+A Semana Acadêmica de Estatística da UFPR aconteceu entre os dias 7 e 9 de junho
+sendo organizado pelo PET-Estatística e tendo como tema "Desafios Acadêmicos na
+Formação para o Mercado de Trabalho". O evento, cuja realização procedeu-se nas
+dependências do Auditório da Administração no Centro Politécnico, contou com mesa
+redonda e apresentações de minicursos e palestras ofertados por profissionais 
+que vivenciam a estatística em suas rotinas de trabalho.
+
+Os temas das palestras abordadas no evento, bem como os respectivos ministrantes
+foram: Estatística Indutiva - Carlos Alberto Bragança Pereira (USP); Visualização
+de informações - Rondon de Andrade Porto (CNJ); O Papel da Empresa Júnior na 
+Formação Profissional - Victor (Estats Consultoria - UEM); Estatística e 
+Empreendedorismo - Julio Adolfo Zucon Trecenti  (CONRE-3); De Fisher até o 
+"Big Data": continuidades e descontinuidades - Renato Martins Assunção (UFMG).
+
+Além disso, os dois minicursos ofertados foram: Documentos Dinâmicos: Analise 
+Dados e Relate Resultados - Eduardo Elias Ribeiro Junior (Esalq - USP); Data 
+Mining com o SAS. Contudo, a mesa redonda foi formada pelos profissionais: 
+Eduardo Vargas Ferreira (UFPR), Vera Lúcia Damasceno Tomazella (ICMC), Julio 
+Adolfo Zucon Trecenti e Paulo Justiniano Ribeiro Junior (UFPR) que expuseram 
+suas opiniões a respeito do ensino da estatística para demandas futuras.
+
+Com a participação de mais de 110 graduandos/pós-graduandos e 23 
+professores/profissionais, a Semana Academica teve apoio do Departamento de 
+Estatístca da UFPR, da Coordenação do Curso de Estatística da UFPR, do SAS,  
+da Estats Consultoria, do CONRE-3 e do Centro Acadêmico de Estatística. 

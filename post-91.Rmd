@@ -1,0 +1,40 @@
+% Problemas na utilização dos dados do Facebook por terceiros  
+% Willian H.
+
+    Em 2016, cerca de 67 milhões de pessoas acessaram a rede social Facebook 
+quase que diariamente. Esses acessos ocorrem por diversas causas como comunica-
+ção com amigos e familiares, trabalho e principalmente para passar o tempo. As 
+ações dos usuários na rede geram muitos dados, que são coletados e armazenados 
+pelo Facebook, a fim de serem utilizados na melhoria da experiência de navega-
+ção. Os dados extraídos são exclusivos do Facebook, porém há algumas formas de 
+conseguir acesso a algumas dessas informações, como em quizzes e jogos elabora-
+dos por terceiros e compartilhado na rede, os criadores desses passatempos rece-
+bem os dados dos usuários que fizerem o login em suas criações e tudo isso é 
+permitido e está nos termos de uso da rede social, desde que não sejam utiliza-
+dos para fins comerciais. Porém em março de 2018, um escândalo envolvendo o 
+Facebook e a extração de dados por terceiros explodiu na mídia. Um ex-funcioná-
+rio da empresa Cambridge Analytica, Christopher Wylie, expôs diversas acusações 
+de que a empresa utilizava os dados coletados no Facebook para manipular os 
+usuários em prol de campanhas políticas, como a de Donald Trump.
+    Segundo Wylie, nas eleições presidenciais dos EUA em 2016, foram utilizadas 
+as bases de dados do Facebook para manipular os cidadãos americanos, a fim de 
+eleger o presidente Donald Trump. O esquema funcionou da seguinte forma: A equi-
+pe de campanha, do até então candidato a presidência, contratou a empresa 
+Cambridge Analytica para cuidar do marketing digital e consequentemente traçar 
+o seu plano para atrair o máximo de eleitores possível. Porém, para que a empre-
+sa pudesse realizar o processo, precisariam de uma uma boa base de dados, sur-
+gindo então o Facebook na história. A Cambridge, utilizou o sistema dos quizzes 
+para extrair os dados dos usuários do Facebook, entretanto, foram além, violando
+os termos de uso e coletando não apenas os dados das pessoas que fizeram o quiz,
+mas também os dados dos amigos de quem clicava na "brincadeira".
+    Com a base de dados em mãos, o time de campanha de Trump colocou sua estra-
+tégia em ação. Eles utilizaram os dados pessoais dos usuários para traçar o seu 
+perfil e decidirem qual a melhor abordagem para cada um deles. A equipe utilizou
+apelos psicológicos, fake news e outros meios para manipular os eleitores e con-
+sequentemente conseguirem seus votos. 
+    Esse episódio, demonstra o poder dos dados atualmente e como eles podem ser
+utilizados de forma prejudicial à sociedade. Ainda, esses fatos nos fazem ques-
+tionar sobre até onde há privacidade nas redes sociais e se é ético coletar to-
+das as ações dos usuários, além de servir como alerta para que se tenha mais 
+consciência na navegação, prestando-se mais atenção nas políticas de privacidade
+das redes sociais e se atentando à possíveis riscos de manipulação. 

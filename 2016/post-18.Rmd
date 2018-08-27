@@ -1,0 +1,29 @@
+% IV WASA (Workshop em Análise de Sobrevivência e Aplicações)
+% Ângela Legey
+
+O Workshop em Análise de Sobrevivência e Aplicações (WASA) é um evento científico 
+nacional na área da Estatística. O público alvo são os profissionais da Estatística 
+Aplicada com ênfase em Análise de Sobrevivência.
+ 
+A última edição aconteceu em Belo Horizonte – Minas Gerais, no Instituto de Ciências 
+Exatas da UFMG, entre os dias 30 de novembro a 02 de dezembro de 2015. 
+O evento contou com a participação de profissionais nacionais como Francisco Louzada,
+Enrico Colosimo, Vera Tomazella, dentre outros e internacionais como Laurent Doyen da 
+Universidade de Grenoble e Giovani Silva da Universidade de Lisboa envolvidos na área de 
+sobrevivência, bem como alunos de graduação e pós-graduação.
+
+Nas comunicações orais, foram apresentados técnicas pouco exploradas e aplicadas 
+na área financeira. Nos pôsters, foram expostas diversas técnicas aplicadas nas 
+áreas da saúde, educação, financeira, e modelagens e abordagens diferentes da 
+convencional.
+
+Participei do evento o qual pude aprimorar-me e conhecer os profissionais que estão 
+buscando novas modelagens e abordagens para a área de sobrevivência. Fazer parte de 
+um evento científico trás diversos benefícios tanto para formação acadêmica, como conhecimento
+de novas técnicas e áreas pouco exploradas, como também a aproximação de outros profissionais da área.
+Também pude expor minha pesquisa individual desenvolvida no PET no formato de pôster. 
+O trabalho pode ser visto 
+<a href="http://www.pet.est.ufpr.br/apresen/peritonite.pdf" target="_blank">aqui</a>.
+
+Para mais informações sobre o evento, acesse:
+<a href="http://www.ime.usp.br/~abe/wasa2015/paginas/iv-wasa target="_blank">aqui</a>.

@@ -1,0 +1,56 @@
+Transações Financeiras com a Criptomoeda Bitcoin
+Willian
+
+	A criptomoeda bitcoin foi exposta em outubro de 2008, por Satoshi Nakamoto, 
+pseudônimo de um usuário do fórum aberto “The Cryptography Mailing”. Satoshi 
+compartilhou com os usuarios deste fórum um white paper intitulado “Bitcoin: A 
+Peer-to-Peer Electronic Cash System”, que apresentava a ideia de uma moeda digi-
+tal e descentralizada, e também o sistema que a moeda utilizaria para realizar
+suas transações, a “blockchain”.
+	Hoje, cerca de 9 anos depois de sua criação, a moeda vem ganhando cada vez 
+mais popularidade ao redor do mundo. Mas por que utilizar a bitcoin e não as 
+tradicionais moedas fiduciárias? A resposta tem vários fatores que variam para 
+cada pessoa, alguns desses fatores são: o caráter ideológico que a moeda trás 
+(pelo fato de que nenhuma instituição publica ou privada tem controle sobre a
+moeda), o anonimato que a rede fornece a seus usuários em suas negociações fi-
+nanceiras e as baixas taxas para cada transação.
+	Para se realizar uma transação com bitcoin, a única taxa que o usuário vai 
+pagar é a chamada “taxa de rede”. Esse tributo é pago aos “mineradores” da rede,
+que são responsáveis por autenticar as transações e garantir a segurança e fun-
+cionalidade da rede. A taxa é calculada através do tamanho de cada transação, ou
+seja, quanto maior a quantidade de bitcoins que se deseja transacionar, maior a 
+taxa de negociação. Para calcular a taxa de rede basta fazer uma regra de três 
+simples, utilizando para se fazer as contas os valores em satoshi*, cada satoshi
+vale exatamente 0,00000001 BTC. A conta seria a seguinte: 81,360 satoshis para 
+cada 226 bytes, então se quisermos transacionar 376,6 bytes de bitcoin (aproxi-
+madamente $100,00 e 0,02000 BTC), multiplicaríamos os 376,6 bytes pelos 81,360 
+satoshis e dividiríamos pelos 226 bytes, teríamos que a taxa de transação seria 
+135,5 satoshis ou 0.00000135 BTC ($0,01). Esse seria o valor para transferir 
+$100 de qualquer localização no globo para outra. Comparando essa transação fei-
+ta com bitcoin, com uma transação feita com os mesmos $100, utilizando a gigante
+Western Union como intermediário pagaríamos* cerca de oito dólares de taxa de 
+transação, diferença muito grande entre sistemas que entregam o mesmo resultado.
+	Com seus baixos custos de transações mostrados no exemplo acima, a bitcoin 
+justifica o crescimento em sua utilização e mostra que pode crescer cada vez
+mais, dado que a moeda além de facilitar transferências de dinheiro para qual-
+quer lugar do mundo, ela pode também tornar produtos mais baratos, pois como já
+vimos às taxas de transações são baixas, e quando comparadas com as de cartões 
+de créditos são praticamente insignificantes.
+	Portanto, como mostrado acima, moeda digital bitcoin já está revolucionando 
+varias áreas do setor financeiro, e a tendência é que nos próximos anos ela 
+ganhe ainda mais adesão na sociedade, tanto por parte de empresários que podem 
+utilizar a moeda como sistema de pagamento na venda de seus produtos, tanto como
+usuários, transferindo dinheiro ou comprando produtos com a criptomoeda.  
+        
+
+*Satoshi é a menor unidade de bitcoin, ou seja; 0,00000001 bitcoin.
+
+*Valores de transações internacionais, partindo do Brasil.
+
+*Valores do dia 12/11/2017 
+
+Fontes:
+http://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html 
+https://blockchain.info/pt/blocks
+http://www.corretorawesternunion.com.br/tarifa-para-envio-internacional/ 
+ULRICH, Fernando. Bitcoin – a moeda na era digital.

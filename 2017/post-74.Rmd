@@ -1,0 +1,41 @@
+% Máquinas de Vetores de Suporte
+% Walmes Marques Zeviani
+
+Máquinas de vetores de suporte (SVM, *support vector machine*) são um
+conjunto de métodos de aprendizado supervisionado usado em problemas de
+classificação e predição numérica (regressão).
+
+A SMV combina tanto o aprendizado baseado em instância, como os k
+vizinhos mais próximos, quanto regressão linear.  Para problemas de
+classificação, a ideia central é definir um hiperplano no espaço das
+covariáveis que melhor separe as observações em suas repectivas
+categorias da variável alvo.  Embora o emprego de SVM seja
+predominantemente em problemas de classificação, ela também pode ser
+utilizada em problemas de regressão e detecção de eventos raros ou
+anomalias (*novalty and outlier detection*).
+
+Em termos computacionais, o problema tratado pela SVM é uma otimização
+convexa com restrições na forma de inequações lineares.  Tal problema
+pode ser em diversos softwares de otimização.  No ambiente R, por
+exemplo, é possível resolver usando o pacote `quadprog`.  No entanto, a
+maioria dos softwares com recursos especializados em SMV fazem uso da
+biblioteca [`libsvm`](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)
+escrita em C++, como por exemplo o R, Python, Julia, Scilab e Weka.
+
+No ambiente R, três pacotes merecem destaque quando o assunto é SVM.  O
+pacote `e1071` possui a função `svm()` que contém as principais opções
+de função kernel e dispõe de recursos para tunagem do algoritmo por meio
+de validação cruzada.  O pacote `kernlab` tem a função `ksvm()` que
+basicamente dispõe dos mesmos recursos, no entanto, possui mais opções
+para funções kernel.  Por fim, o pacote `caret` dispõe de um ecossistema
+de funções envelope para facilitar o emprego de métodos de machine
+learning.  O workhorse para SVM do `caret` é a `ksvm()`, ou seja, o
+pacote chama essa função para executar o ajuste.  A vantagem de
+considerar o `caret` é a facilidade no emprego de outros algoritmos de
+classificação, como k-NN, Naive Bayes, etc, e recursos para tunagem dos
+métodos.
+
+Para exemplos de como utilizar tais funções, visite o tutorial
+disponível na disciplina de Machine Learning do Curso de Estatística
+UFPR:
+<http://leg.ufpr.br/~walmes/ensino/ML/tutorials/05-support-vector-machine.html>.

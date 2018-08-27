@@ -1,0 +1,36 @@
+Indicações de livros ligados à Estatística
+Vinicius César
+
+Durante a gradução, a necessidade de conhecimentos extras torna-se corriqueiro. 
+Existem muitas formas de obter essas informações, seja por meio de conversas com 
+profissionais da área, de video-aulas ou até mesmo através de livros. Este 
+último, por sua vez, pode ser considerado uma das ferramentas mais importantes 
+e mais utilizadas para o saber. 
+
+A respeito da Estatística, inúmeros são os livros que apresentam diversas 
+abordagens e tópicos. Nesse texto, apresento algumas sugestões de livros que 
+complementarão o seu conhecimento.
+
+1) *Probabilidade – Um curso Moderno com Aplicações, de Sheldon Ross*
+Para os facinados pela probabilidade, esse livro é muito bem recomendado. Sendo 
+considerado um dos melhores livros de probabilidade do mundo, Ross apresenta de 
+forma clara e objetiva aspectos básicos e avançados com aplicações indo desde 
+"Esperança Matemática" até "Entropia".
+
+2) *Introdução ao Controle Estatístico de Qualidade, Douglas Montgomery*
+Escrito por um dos mais recomendados autores da literatura estatística, esse 
+livro apresenta um conhecimento bem aprofundado sobre controle de processos, 
+evidenciando que a qualidade é uma estratégia de negócio altamente presente no 
+mercado competitivo.
+
+3) *Estatística Não-Paramétrica Para Ciências do Comportamento, Sidney Siegel e 
+John Castellan*
+Esse livro apresenta um conjunto de técnicas não paramétricas altamente 
+aplicáveis e utilizadas no contidiano dos estatísticos e profissionais da área. 
+É uma das obras mais citadas em trabalhos científicos.
+
+4) *An Introduction to Statistical  Learning: With Applications in R, Gareth 
+James, Daniela Witten, Trevor Hastie e Robert Tibshirani*
+Livro fundamental para pessoas interassadas na área da computação. Além de 
+apresentar métodos de machine learning, esse livro utiliza o software livre R 
+nas suas aplicações, permitindo que o leitor interaja ao mesmo tempo que aprende.

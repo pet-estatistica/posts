@@ -1,0 +1,153 @@
+---
+title: Documentos Rmarkdown com Figuras em Tikz
+autor: Walmes Zeviani
+output: html_document
+---
+
+```{r, include = FALSE,}
+library(knitr)
+opts_chunk$set(cache = FALSE,
+               tidy = FALSE,
+               fig.width = 6,
+               fig.height = 6,
+               fig.align = "center",
+               dpi = 100,
+               dev = "png",
+               engine.opts = list(template = "TIKZ_PREAMBLE.pgs",
+                                  convert = "/usr/bin/convert",
+                                  convert.opts = "-density 300"),
+               dev.args = list(family = "Palatino"))
+```
+
+Em muitos documentos, como livros, são incluídas figuras que não podem
+(sem muito esforço) ser geradas pelo R.  Fluxogramas que representam
+algoritmos, círcuitos elétricos, diagramas de Venn e cortes e seções de
+uma peça mecânica são exemplos de figuras que usualmente estão presentes
+em livros técnicos na área de Estatística, Engenharia e Informática.
+
+[Tikz](https://sourceforge.net/projects/pgf/) é uma linguagem para
+produção de desenhos vetoriais para documentos LaTeX.  Para ser mais
+preciso, PGF/Tikz são os componentes que juntos fornecem macros para
+desenhos.  PGF é a linguagem de baixo nível sobre a qual Tikz é a camada
+com macros voltadas para o usuário utilizar.  A forma mais simples de
+usar o Tikz não é diferente da maioria dos pacotes LaTeX: basta colocar
+`\usepackage{tikz}` no preambulo e usar o ambiente
+`\begin/\end{tikzpicuture}` dentro do seu documento LaTeX.  Existe uma
+galeria bem grande de desenhos em <http://www.texample.net/tikz/>.
+
+Para construção das figuras (conteúdo que vai no ambiente
+`tikzpicuture`), recomenda-se utilizar o
+[ktikz](https://apps.ubuntu.com/cat/applications/ktikz/) (KDE) ou
+[qtikz](https://apps.ubuntu.com/cat/applications/qtikz/) (Qt). Com eles
+você programa e vê o resultado instantaneamente. Depois de pronto, você
+pode colar o código dentro do seu documento LaTeX ou exportar o
+resultado como imagem em PNG ou PDF. Ambos estão disponíveis nos
+repositórios do Ubuntu.
+
+O pacote [knitr](http://yihui.name/knitr/) permite utilizar outras
+linguagens dentro dos *chunks* além do R. A maior parte das linguagens
+habilitadas é de programação (bash, python, awk), mas tem Tikz e Dot
+para produzir desenhos. Para incluir um desenho Tikz dentro de um
+documento Rmarkdown é baste usar a opção de *chunk* `engine =
+"tikz"`. Veja o exemplo abaixo. Os sinais `%%` foram utilizados só para
+incluir no cabeçalho de *chunk* na saída.
+
+```{r, engine = "tikz", fig.ext = "png", fig.cap = "Um círcuito"}
+%% ```{r, engine = "tikz", fig.ext = "png", fig.cap = "Um círcuito"}
+\tikzset{
+  >=stealth',
+  node distance=2mm and 3mm,
+  every node/.style={draw},
+}
+
+\begin{tikzpicture}
+  \coordinate (c0) at (1.5,0);
+  \coordinate (x1) at ($(-0.8,0)+(c0)$);
+  \coordinate (x0) at ($(-0.5,0)+(x1)$);
+  \coordinate (x2) at ($(0.8,0)+(c0)$);
+  \coordinate (x3) at ($(0.5,0)+(x2)$);
+  \node (r1) [above=of c0] {0.95};
+  \draw[->] (x0) -- (x1) |- (r1) -| (x2) -- (x3);
+  \node (r2) [below=of c0] {0.85};
+  \draw (x1) |- (r2) -| (x2);
+\end{tikzpicture}
+%% ```
+```
+
+O exemplo acima mostra um uso bastante trivial do recurso. Opções
+adicionais permitem o uso de um *template* definido pelo usuário. O
+*template* padrão do knitr fica no diretório `misc` do pacote knitr.
+
+```{r, eval = FALSE}
+# Local do template para Tikz dentro do knitr.
+system.file("misc", "tikz2pdf.tex", package = "knitr")
+
+# Aponta para um template pessoal.
+opts_chunk$set(engine.opts = list(template = "meu_template.pgs"))
+```
+
+O conteúdo do *template* padrão é possui só as definições mínimas (veja
+abaixo). O template pode ter muitos pacotes extras.  O exemplo
+[aqui](https://github.com/walmes/Tikz/blob/master/src/TIKZ_PREAMBLE.pgs)
+é um *template* para usar no Ktikz. Lembre-se que o *template* deve
+contem a marca `%% TIKZ_CODE %%` para ser utilizado pelo knitr.
+
+```{r, echo = FALSE, comment = NA}
+file <- system.file("misc", "tikz2pdf.tex", package = "knitr")
+cat(readLines(file), sep = "\n")
+```
+
+Em linhas gerais, o que o knitr faz é colar o conteúdo do *chunk* dentro
+do *template* onde existe a marca `%% TIKZ_CODE %%`. Um arquivo `tex`
+temporário com esse conteúdo é gerado, que é compilado gerando um PDF. O
+ImageMagick é chamado para converter para o formato especificado em
+`fig.ext`, no caso mostrado acima, é PNG.
+
+A função `convert` do ImageMagick possui vários argumentos que permitem
+controlar, por exemplo, a resolução da figura gerada. É possível também
+incluir até sombras, bordas e fazer recortes (crop) nas imagens. O
+exemplo abaixo mostra como colocar um contorno preto da figura.
+
+```{r}
+opts_chunk$set(engine.opts = list(
+                   template = "TIKZ_PREAMBLE.pgs",
+                   convert = "/usr/bin/convert",
+                   convert.opts = paste("-density 300",
+                                        "-bordercolor '#FFFFFF'",
+                                        "-border 20",
+                                        "-shave 1x1",
+                                        "-bordercolor black",
+                                        "-border 1")))
+```
+```{r, engine = "tikz", fig.ext = "png", out.width = "auto"}
+\tikzstyle{vertex1}=[
+  rectangle, minimum size=12pt, inner sep=1pt, fill=gray!10]
+\tikzstyle{vertex2}=[
+  rectangle, minimum size=12pt, inner sep=1pt, fill=gray!90]
+\tikzstyle{edge}=[draw,thick,-,black]
+
+\begin{tikzpicture}[
+  xscale=2.2, yscale=2.1, ->, thick,
+  z={(0.45,0.35)}, node distance=0.65cm]
+  \node[vertex1] (v0) at (0,0,0) {$(1) = 550$};
+  \node[vertex2] (v1) at (0,1,0) {$cd = 1075$};
+  \node[vertex2] (v2) at (1,0,0) {$ad = 749$};
+  \node[vertex1] (v3) at (1,1,0) {$ac = 642$};
+  \node[vertex2] (v4) at (0,0,1) {$bd = 1052$};
+  \node[vertex1] (v5) at (0,1,1) {$bc = 601$};
+  \node[vertex1] (v6) at (1,0,1) {$ab = 650$};
+  \node[vertex2] (v7) at (1,1,1) {$abcd = 729$};
+  \draw[edge] (v0) -- (v1) -- (v3) -- (v2) -- (v0);
+  \draw[edge] (v0) -- (v4) -- (v5) -- (v1);
+  \draw[edge] (v2) -- (v6) -- (v7) -- (v3);
+  \draw[edge] (v4) -- (v6); \draw[edge] (v5) -- (v7);
+\end{tikzpicture}
+```
+
+Quando se passa opções para o *convert*, é necessário indicar o caminho
+para ele. Para saber onde fica o `convert` no Linux, faça `whereis
+convert`.
+
+O repositório <https://github.com/walmes/Tikz> é uma galeria de figuras
+em Tikz. Sinta-se livre para estudar, usar e modificar os exemplos
+contidos no repositório.

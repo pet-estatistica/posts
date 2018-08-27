@@ -1,0 +1,46 @@
+% Relato 62ªRBras/17º SEAGRO
+% Jhenifer C. Veloso
+
+A 62ª Reunião Anual da Região Brasileira da Sociedade Internacional de
+Biometria (RBras) e o 17º Simpósio de Estatística Aplicada à
+Experimentação Agronômica (SEAGRO) ocorreram em Lavras, MG, no
+período de 24 a 28 de julho de 2017 com o tema: "Desafios recorrentes da
+estatística aplicada: a informação em tempos de big data". O evento
+contou com a presença de alunos, ex-alunos e professores da UFPR com
+apresentações de minicursos e comunicações orais.    
+Os professores Wagner Bonat e Walmes Zeviani ministraram o minicurso
+"Multivariate Covariance Generalized Linear Models for the Analysis of
+Experimental Data", o professor Elias Krainski ministrou o minicurso
+"Modelagem usando INLA" e o trabalho "Non-separable spacetime models
+from stochastic partial differential equations" em uma sessão temática.
+O professor Wagner e o ex-aluno e ex-petiano Eduardo Junior apresentaram
+seus trablhos em formato de comunicação oral, cujos títulos eram "Modelos
+de regressão quase-beta para análise de respostas limitadas" e
+"Reparametrização dos Modelos de Regressão COM-Poisson com Aplicações
+na Análise de Dados de Contagem Experimentais" respectivamente. E por
+fim, o professor Wagner apresentou o trabalho "Modelos multivariados de
+covariância linear generalizada" em uma sessão temática de jovens
+doutores.     
+Além da efetiva participação da UFPR, participaram do evento
+pesquisadores importantes no cenário nacional e internacional da
+Estatística como John Hinde (NUI Galway, Irlanda), Clarice Garcia Borges
+Demétrio (ESALQ/USP), Renato Martins Assunção (UFMG), Marcos Nascimento
+Magalhães (IME/USP), entre outros.   
+A participação em eventos é importante, pois além de conhecer pessoas,
+enriquece o currículo e amplia seu conhecimento na área. Então, se você
+tem a oportunidade de participar de um evento, não a disperdice.
+
+<center>
+### Nos vemos na 63ª RBras em 2018 na UFPR.   
+###ATÉ BREVE
+</center>
+
+**Links úteis**
+
+* Multivariate Covariance Generalized Linear Models for the Analysis of
+Experimental Data: http://cursos.leg.ufpr.br/mcglm4aed
+
+* Modelagem usando INLA: https://github.com/eliaskrainski/inla62rbras
+
+* Reparametrização dos Modelos de Regressão COM-Poisson com Aplicações
+na Análise de Dados de Contagem Experimentais: http://www.leg.ufpr.br/doku.php/pessoais:eduardojr:publications-rbras2017

@@ -1,0 +1,38 @@
+% O Problema do Cálculo Aplicado
+% Bruno Geronymo
+
+
+Quando falamos de cálculo é comum pensarmos em limites, derivadas e
+integrais, apesar de sabermos que não trata-se somente dessas três
+definições. Esta é uma matéria essencial para todos os cursos de exatas,
+o que define a sua importância. Porém, essa importância é conhecida para
+os discentes desses cursos? Não só os discentes, mas, e quanto aos
+docentes?
+
+Em muitas instituições de ensino fundamental e médio os alunos são
+educados de modo a não se questionar o porquê de estar aprendendo aquela
+matéria de matemática, assim como os professores não gostam de ouvir
+esta pergunta. Então, as únicas dúvidas que são desenvolvidas em sala de
+aula são aquelas que dizem respeito ao algebrismo da matéria e em como
+resolver determinado problema matemático, dada uma determinada fórmula
+matemática. 
+
+Devido a essa cultura de grande parte das instituições de ensino
+fundamental e médio, esse problema é herdado também para as instituições
+de ensino superior. Esse problema é dado pelo fato de que os docentes
+que ministram as aulas de Cálculo na universidade, de modo geral, não
+possuem conhecimento da matéria aplicada na área em que os alunos estão
+matriculados, e caso o discente queira saber da efetividade do Cálculo
+em sua vida profissional e acadêmica, terá que realizar pesquisas por
+conta própria.
+
+Por esses motivos é que o Cálculo Estatístico desperta pouco interesse
+aos poucos que sabem de sua existência. O Cálculo Estatístico constrói
+uma base sólida para grande parte das teorias e métodos estatísticos,
+portanto é inevitável falar de estatística sem falar de matemática. Eis
+um dos motivos que incentiva um projeto de pesquisa na área de Cálculo
+aplicado na Estatística que será de proveito tanto de professores quanto
+de alunos da graduação do curso de Estatística e, possivelmente, de
+Matemática, com  propostas de complementar o ensino da graduação, e 
+selecionar docentes, da matéria de Cálculo, que estejam interessados
+neste projeto.

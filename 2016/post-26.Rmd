@@ -1,0 +1,344 @@
+% Autocorrelação Espacial - I de Moran
+% Gabriel Sartori Klostermann
+
+# Contextualização
+
+A área de estatística espacial tem como foco de estudo os fenômenos ao
+longo do espaço geográfico. O primeiro passo em um estudo desta natureza é
+verificar se de fato é necessário utilizar a estatística espacial. 
+Para isso é
+normalmente utilizado algum índice que quantifique a autocorrelação 
+espacial. Utilizaremos o post anterior referente sobre 
+a visualização de mapas no R, pode ser obtido [aqui](http://www.pet.est.ufpr.br/?p=3421). 
+Geralmente um 
+cientista social pode se questionar sobre uma possível associação 
+espacial, em outras palavras, se existe influência do atributo da região 
+com seus vizinhos. Neste contexto, o Índice de Moran 
+é largamente utilizado. Neste post trataremos sobre a fórmula, interpretação e
+validação deste método e aplicaremos o mesmo no software R.
+
+O I de Moran, aplica-se anteriormente a modelagem espacial, para verificação
+de depêndia espacial, trata-se de um índice descritivo. Geralmente é 
+aplicado em dados de área, que são áreas particionadas em n regiões em que 
+cada região representa um atributo agregado. No nosso caso, cada munícípio
+tem sua respectiva taxa de analfabetismo. Ademais, pode ser usado em outras 
+classifições de dados espacias como a geoestatística, mas não será tratado.
+
+```{r, include = FALSE}
+require(knitr)
+require(maptools)
+require(sp)
+require(spdep)
+require(rgdal)
+require(classInt) 
+require(RColorBrewer) 
+```
+
+```{r, eval = FALSE}
+
+## Pacotes Utilizados
+require(knitr)
+require(maptools)
+require(sp)
+require(spdep) # Método de Moran, vizinhança
+require(rgdal)
+require(classInt) 
+require(RColorBrewer) 
+```
+
+
+```{r, include = TRUE}
+sc_analfa <- readOGR(dsn = "/home/gabriel/posts/Mapa", layer = "base_sc_analfa",
+              encoding = "utf8")
+names(sc_analfa@data)[11] <- "Taxa.analfabetismo"
+```
+
+```{r, mapa, echo = TRUE, fig.align = 'center'}
+INT <- classIntervals(sc_analfa@data$Taxa.analfabetismo, # Variável de interese  
+                      n = 3, # Separando em 3 classes
+                      style = "kmeans") # Utilizando o método de k-means
+
+CORES.5 <- brewer.pal(3, # 3 Tons de vermelho
+                      "Reds") # Gradiente de vermelho sequencial
+
+COL <- findColours(INT, CORES.5) # Atribuindo para as legendas as respectivas cores
+plot(sc_analfa, col=COL) 
+title("Porcentagem de Analfabetismo em Santa Catarina - 2010") 
+
+TB <- attr(COL, "table") # Selecionando a tabela da legenda com a contagem de municípios
+legtext <- paste(names(TB), # Distâncias das classes
+                 " (", TB, ")", sep = "") # Adicionando a contagem dos municípios nas classes
+
+legend("bottomleft", # Colocando a legenda no canto inferior
+       fill = attr(COL, "palette"), # Preenchendo as cores nas classes
+       legend = legtext, # Distâncias das classes
+       bty = "n", # Sem borda na legenda
+       ncol = 1) # As distâncias estarã disposta numa única coluna
+```
+
+## Fórmula do I de Moran 
+
+O Índice de Moran define as hipóteses como sendo:
+
++ $H_{0}$: Não há dependência espacial 
++ $H_{1}$: Há dependência espacial 
+
+Para cálculo das hipótese utiliza-se a fórmula abaixo. A ideia é comparar
+a correlação do atributo da área i, com a média dos atributos de seus vizinhos. 
+
+\begin{equation}
+I_{ij}= \frac{n}{\sum_{i=1}^n \sum_{j=1}^n W_{ij}} \frac{\sum_{i=1}^n \sum_{j=1}^n W_{ij}(y_{i}-\bar{y})(y_{j}-\bar{y})} {\sum_{j=1}^n(y_{i}-\bar{y})^2}
+\end{equation}
+
++ n: Número de áreas
++ $W_{ij}$: Matriz de vizinhança
++ $y_{i}$: Atributo da área i
++ $\bar{y}$: Média dos atributos na área
+
+## Matriz de vizinhança
+
+### Vizinhos
+
+A vizinhança é uma escolha que depende da natureza dos dados. Descrevo
+abaixo as principais:
+
++ Fronteira ou Toque
++ Movimento Torre
++ K vizinhos mais próximos
++ Raio
+
+**Fronteira ou Toque**: Quando o dado refere-se a própria natureza da região, 
+como o PIB de um estado. 
+
+**Movimento Torre**: Assumimos quando o toque diagonal de um polígono com outro,
+pode ser desconsiderado. A geografia dos Estados Unidos é um exemplo.
+
+**Raio**: Quando a natureza do dado, refere-se a um índice que varia no espaço,
+não dependendo exclusivamente da área, como um índice de chuva ou poluição.
+O tamanho do raio é arbitrário ou por especificações técnicas.
+
+**K vizinhos mais próximos**: Quando há uma grande variabilidade de vizinhos.
+
+**Obs**.: No nosso estudo trataremos a vizinhança por fronteira.
+
+### Ponderação
+
+Definido o critério para vizinhos, se faz necessário ponderar. 
+Apresento abaixo as principais técnicas, caso não forem vizinhos
+o valor de uma região com a outra sempre será 0!
+
++ Binária
++ Normalizar vizinhos
++ Total de regiões
+
+**Binária**: Peso unitário para cada vizinho.
+
+**Quantidade de vizinhos**: Peso dos respectivos vizinhos são 
+normalizados, para que somem 1. Recomenda-se quando a natureza dos dados 
+apresentem uma variabilidade alta de um índice de escala alta.
+
+**Total de regiões**: O somátório da matriz de vizinhança é igual 1.
+
+**Obs**:. Escolheremos a ponderação padronizada.
+
+Esclarecendo esta teoria, com o exemplo:
+
+```{r}
+# Contruindo a matriz de vizinhança por fronteira
+sc.nb1 <- poly2nb(sc_analfa)
+```
+
+```{r}
+
+plot(sc_analfa, main="Grafo dos Vizinhos")
+plot(sc.nb1, 
+     coordinates(sc_analfa), # Coordenadas geográficas dos centróides dos municípios
+     add=T)
+```
+
+O mapa acima é denominado de grafo, por apresentar as conexões de vizinhança 
+para cada município. Especificaremos para uma partição deste espaço, no 
+caso utilizaremos a cidade de Joinville para construir a matriz de vizinhança. 
+Repare que a matriz está padronizada por linha e que 0 está presente na 
+diagonal principal, pois nenhuma área é vizinha dela mesma.
+
+```{r, eval = FALSE}
+# Contruindo a matriz de vizinhança
+sc.nb1 <- poly2nb(sc_analfa)
+sc.nb1 # Resumo da vizinhança
+```
+
+```{r}
+# Vamos utilizar a cidade de Joinville para didática da matriz de vizinhança
+jlle <- which(sc_analfa$Nome_Munic == "Joinville")
+
+# Extraindo os vizinhos de Joinville
+vizi_jlle <- unlist(sc.nb1[jlle])
+
+# Subset mapa
+joinville <- sc_analfa[c(jlle, vizi_jlle),]
+
+jlle.nb1 <- poly2nb(joinville)
+
+plot(joinville, main = "Grafo dos Vizinhos de Joinville")
+plot(jlle.nb1, coordinates(joinville), add=T)
+```
+
+
+```{r, echo = FALSE}
+jlle.nb1.mat <- nb2mat(jlle.nb1)
+rownames(jlle.nb1.mat) <- as.character(joinville$Nome_Munic)
+```
+
+```{r, results = 'asis', echo = FALSE}
+jlle.data <- as.data.frame(jlle.nb1.mat)
+colnames(jlle.data) <- rownames(jlle.data)
+
+kable(as.data.frame(jlle.data))
+```
+
+## Aplicação do Teste
+
+Antes de aplicar o teste é necessário verificar se os dados tem 
+distribuição normal, para orientar qual o procedimento de validação. Pelo Histograma, 
+a distribuição dos dados não aparenta visualmente a normalidade. Realizando
+o teste de Shapiro, comprova-se o nível significância inferior a 1%.
+
+```{r}
+# Aplicando o teste de Shapiro
+hist(sc_analfa$Taxa.analfabetismo, 
+     xlab = "",
+     ylab = "Frequência", 
+     main = "Histograma da taxa de Analfabetismo")
+
+shapiro.test(sc_analfa$Taxa.analfabetismo) # Não é normal
+```
+
+
+O resultado do teste de Moran apresenta um valor de 0.5, como se trata 
+de uma medida de autocorrelação o resultado se enquadra entre 
+valores de -1 a 1. No qual se estiverem próximos a 0 interpretamos que 
+não há associação espacial e o sentido para os extremos signfica 
+associação positiva ou negativa, dependendo do sinal. No nosso caso é 
+uma associação espacial positiva, os municípios próximos tem valores 
+semelhantes. Porém é necessário verificar se este 0.5 é realmente 
+significativo, no caso o valor do `p-valor` é muito baixo, comprovando 
+que há, sim, uma associação espacial!
+
+
+```{r}
+# Teste de Moran para dados não normais
+mt <- moran.test(sc_analfa$Taxa.analfabetismo, 
+                 listw = nb2listw(sc.nb1), # Pesos Padronizados
+                 randomisation = TRUE) # Argumento para dados não normais
+```
+
+```{r,echo = FALSE}
+mt
+```
+
+
+# Validade do teste
+
+## Normalidade
+
+Basta aplicar a fórmula abaixo e comparar com a normal Padrão. Se o 
+resultado do $I_{N}$ estiver acima de 1,96, levando em consideração 
+uma signifcância de 5%, identifica que há associação espacial!
+
+\begin{equation}
+I_{N} = \frac{I - E(I)}{\sigma}
+\end{equation}
+
+\begin{equation}
+\sigma^{2} = \frac{n^2(n-1)S_{1}-n(n-1)S_{2}-2S_{0}^{2}}{(n+1)(n-1)^{2}S^{2}_{0}}
+\end{equation}
+
+\begin{equation}
+E(I) = \frac{1}{n-1}
+\end{equation}
+
++ n: Número de áreas
++ $S_{0}$ = $\sum \sum W_{ij}$ - para i \neq j 
++ $S_{1}$ = $\sum \sum (W_{ij} + W_{ij})^2$ - para i \neq j 
++ $S_{2}$ = $\sum (\sum W_{ij} + \sum W_{ij})^2$
+
+
+## Teste da Permutação
+
+O Teste de Permutação, não leva em consideração nenhuma distribuição
+dos dados. Consiste em simular n vezes, aleatorizando o atributo das 
+regiões, e calcular o índice de Moran
+para cada uma das simulações. Com esta simulação cria-se a curva 
+empírica dos I de Moran simulados e compara com o valor orginal. 
+O p-valor do teste é o número dos I de Moran simulados que foram 
+maiores que o orginal dividido pelo número de simulação.
+
+# I de Moran Local
+
+O índice de Moran local possue a mesma lógica de vizinhança,
+ponderação e interpretação, a diferença consiste que o Moran local calcula
+para cada partição e o Moran global para toda região. O Moran local permite a
+construção de dois gráficos o e o diagrama de espalhamento do Moran 
+e o *Local* *Indicator* *Spatial* *Association* (LISA).
+
+```{r}
+# Construindo o mapa de Espalhamento de Moran
+
+## Montando a matrix de vizinhança
+sc.nb1.mat <- nb2mat(sc.nb1)
+
+## Taxa de analfabetização 
+sc_analfa_padr <- scale(sc_analfa@data$Taxa.analfabetismo)
+
+## Cálculo da média da taxa dos respectivos vizinhos
+sc_analfa_media <- sc.nb1.mat %*% sc_analfa_padr
+
+## Diagrama de espalhamento de Moran
+plot(sc_analfa_padr, sc_analfa_media, xlab = "Taxa Padronizada do Município", 
+     ylab = "Médias dos Vizinhos")
+abline(v=0, h=0)
+```
+
+O Diagrama de Espalhamento de Moran, apresenta um comparativo entre a 
+taxa de analfabetismo padronizada do 
+município, com a média da taxa dos vizinhos. 
+Este gráfico está divido em 4 partes, em que os quadrantes 
+referem-se ao sinal da relação. Por exemplo, no 1° Quadrante 
+temos municípios e seus vizinhos com a taxa acima da média.
+Temos como destaque para o 3° Quadrante, que possui os muncípios e vizinhos 
+abaixo da média! A maioria dos municípios se encontra nos eixos de 
+depência espacial direta. Outra maneira de comprender o resultado 0.5 do Moran é 
+a inclinação dos pontos neste gráfico.
+
+
+```{r}
+## Montando o LISA
+Q <- ifelse((sc_analfa_padr >= 0 & sc_analfa_media >=0), 1, 0)  # 1° Quadrante
+Q[(sc_analfa_padr <0 & sc_analfa_media < 0)] <- 2 # 2° Quadrante
+Q[(sc_analfa_padr >=0 & sc_analfa_media < 0)] <- 3 # 3° Quadrante
+Q[(sc_analfa_padr <0 & sc_analfa_media >= 0)] <- 4 # 4° Quadrante
+
+
+colors <- c("red", "blue", "lightpink", "skyblue2")
+
+
+plot(sc_analfa, col=colors[Q])
+title("LISA")
+
+legend("bottomleft", 
+       c("Q(+/+)", "Q(-/-)", "Q(+/-)", "Q(-/+)"), 
+       fill=colors, 
+       bty = 'n')
+```
+
+O LISA é a representação espacial do Método de espalhamento de Moran. 
+Reforça-se a verificação de que a região norte e litoral tem as taxas 
+mais baixas, já seguindo a oeste as taxas aumentam!
+
+Diante desta análise, podemos expor a um cientista social que 
+o índice de analfabetismo varia conforme o espaço, sendo que esta relação
+é dos vizinhos tem valores próximos. Dado esta afirmação podemos partir
+para modelagem, para tentar descobrir fatores que justifiquem. É válido
+também incorporar análise de cluster como *skater*, *kuldorf*, mas que
+pode ser tratado em outros posts.

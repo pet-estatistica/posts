@@ -1,0 +1,50 @@
+% Concepção de Data Mining
+% Altamiro Antonio Basiewics
+
+"Data Mining" é um termo amplo utilizado para descrever diferentes 
+aspectos do processamento de dados.
+Mineração de dados é um estudo e coleta, redução, seleção, 
+processamento, análise e classificação de dados. Um amplo domínio de 
+problemas são encontrados em aplicações reais. Portanto, praticamente 
+todos sistemas automatizados geram alguma forma de dado, quer para 
+fins de diagnóstico ou análise. Isto resultou em um torrente de dados, 
+a qual tem atingindo a ordem de pentabytes. Alguns exemplos de 
+diferentes tipos de dados:
+
+World Wide Web: O número de documentos está em ordem de bilhões.
+Estes diferentes tipos de dados são úteis em várias aplicações.
+Por exemplo, documentos da Web e a estrutura dos links podem ser 
+minerados e padrões extraído para determinar associações entre os 
+diferentes temas na Web. Por outro lado, os logs de acesso do usuário 
+pode ser extraído para determinar os padrões frequentes de acessos ou 
+padrões incomuns de comportamento.
+
+Interações Financeiros: A maioria das transações comuns da vida 
+cotidiana, como o uso de caixa automático ou cartão de crédito podem 
+acumular bancos de dados de forma automática. Tais operações podem ser 
+mineradas pelos seus elementos úteis, tais como evitar fraude ou outra 
+atividade irregular.
+
+As interações com o usuário: Muitas formas de interações com o usuário
+criam grandes volumes de dados. Como exemplo, a utilização de um 
+telefone cria um registo com detalhes sobre a duração e destino da 
+chamada.esses dados podem ser analisados para determinar os padrões 
+relevantes de comportamento que podem ser usados para tomar decisões 
+sobre a capacidade da rede, promoções, preços, ou foco no cliente.
+
+Tecnologias de sensores: tendência recente é o desenvolvimento de 
+sensores, smartphones e outros dispositivos inteligentes de baixo custo
+que podem comunicar-se uns com os outros. Então podem ser desenvolvidos 
+softwares mais inteligentes para filtrar e deixar mais eficiente a troca
+de informações.
+
+Processo de expressão gênica: Muitas tecnicas como sequenciameto,
+microarrays, SAGE, etc são sujeitas a problemas e extremamente sensíveis
+a ruídos no processo de análise. O data mining com ferramentas 
+estatísticas adequadas pode fornecer meios para separar os dados 
+importantes do ruído misturado a informação.
+
+Ou seja, transformar enormes quantidades de dados em informações úteis é
+a tarefa básica da mineração de dados. Isso exige não só amplo domínio 
+de técnicas computacionais e Estatísticas, mas também de métodos 
+especiais que vem sido desenvolvidos nas últimas décadas.

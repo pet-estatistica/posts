@@ -1,0 +1,348 @@
+# Visualizar mapas de unidades municipais no R
+
+Em um mapa há diversos elementos a serem moldados como as cores, a legenda e a 
+própria superfície do mapa. Neste post trabalharemos com dados do censo de 2010 
+da porcentagem de analfabetismo acima de 15 anos no estado de Santa Catarina, 
+obtidos no [DataSUS](#dataSUS) e [IBGE](#IBGE). O mapa aqui tratado será de 
+característica temática, na qual cada região administrativa (municípios) tem 
+uma intensidade de coloração pelo índice de analfabetismo. A base de dados espaciais 
+para a criação do mapa referente a Santa Catarina será no formato 
+[shapefile](#shapefile), no qual há três arquivos essenciais na construção do 
+mapa com extensão *shp*, *shx* e *dbf*.
+
+## Cores
+
+
+```{r, include = FALSE}
+require(RColorBrewer)
+```
+
+
+A escolha de cores pode parecer trivial, porém o mau uso pode ocasionar
+graves equívocos de interpretação na visualização do mapa. Na verdade temos
+o viés de decidir primeiro a cor ser usada, porém é necessário perguntar qual 
+categoria a nossa variável se encontra para depois definir a cor.
+Destaco abaixo três categorias de cores: sequenciais,
+qualitativas e divergentes.
+
+* Sequenciais 
+
+Paletas sequenciais são adequados para os dados tem progresso de baixa para alta. 
+A aparência é feita com cores claras para baixos valores de dados e cores escuras 
+para valores elevados. 
+
+```{r, fig.height = 2.05, echo = FALSE, eval = FALSE}
+corseq <- brewer.pal(7,"Reds")
+image(1:7,1, as.matrix(1:7), col = corseq, xlab = "",
+       ylab="", xaxt ="n",yaxt = "n", bty = "n")
+```
+![Sequencial][5]
+
+* Qualitativas 
+
+Paletas qualitativas não implicam diferenças de magnitude entre as classes de legenda, 
+e tons são usados para criar as diferenças visuais entre classes. Cores qualitativas 
+são mais adequados para representar dados nominais ou categóricas.
+
+```{r, fig.height = 2.05, echo = FALSE, eval = FALSE}
+corquali <- brewer.pal(7,"Accent")
+
+image(1:7,1, as.matrix(1:7), col = corquali, xlab = "",
+       ylab="", xaxt ="n",yaxt = "n", bty = "n")
+
+```
+
+![Qualitativa][6]
+
+* Divergentes 
+
+Paletas divergentes colocam ênfase em valores extremos críticos de média em ambas 
+as extremidades do intervalo de dados. A classe crítica ou pausa no meio da legenda 
+é enfatizado com cores claras. Os valores baixos e altos são colocados
+com cores escuras com tons contrastantes.
+
+
+```{r, echo = FALSE, fig.height = 2.05, eval = FALSE}
+cordiv <- brewer.pal(7,"RdBu")
+
+image(1:7,1, as.matrix(1:7), col = cordiv, xlab = "",
+       ylab="", xaxt ="n",yaxt = "n", bty = "n")
+```
+
+![Divergente][7]
+
+Definida a classe, a escolha da cor a ser representada é subjetiva. Usamos por exemplo o 
+azul ou verde para  representar atributos positivos. Caso contrário usamos vermelho 
+para índice negativos.
+A taxa de alfabetismo se enquadra na categoria sequencial e devido o índice de 
+precarização educacional usaremos o vermelho.
+
+## Legenda
+
+Ao definir a legenda, estamos nos perguntandos a quantidade e as distâncias.
+
++ Quantidade de classes 
+
+Recomenda-se que a quantidade de classes não ultrapasse sete. 
+Exceto, caso normas que indiquem mais categorias. Outra diferenciação importante 
+é se a quantidade de classes é par ou ímpar, caso seja ímpar implica uma 
+categoria neutra com outras duas extremidades de aspectos positivos e negativos. 
+
++ Distância das Classes
+
+A distância das classes significam pontos de cortes, que agrupariam localizações geográficas. 
+O mau uso destas poderia afetar as próximas políticas a serem práticadas.
+Sendo assim, uma localização poderia estar num grupo, rebendo um tratamento de forma equivocada.
+Recomeda-se descrever a densidade da variável em questão, através de um histograma. 
+Os principais métodos são: 
+
++ Definido pelo pesquisador;
++ Parâmetros globais;
++ Quantis;
++ Mesma distância;
++ Desvio Padrão;
++ K-means;
+
+Pârametros globais definidos no país, podem omitir quanto o objeto de estudo é um estado. 
+Mesma distância, dificilmente usada, é usada somente no caso em que a variabilidade 
+seja a mesma para todas as classes. 
+Desvio padrão, recomenda-se quando a distribuição é simétrica.
+K-means, já é um próprio método de agrupamento, que capta adequadamente a assimetria.
+
+**Obs.:** Não necessariamente a escolha deve-se partir da ordem cores para a legenda. 
+Apenas para título didático foi assim apresentado neste post.
+
+## Visualizar mapa no R
+
+Utilizaremos as seguintes bibliotecas do R, para gerar o mapa: `rgdal` 
+para leitura de arquivos shapefile, `classInt` na criação das legendas, 
+neste pacote possui todas as que listei. `RColorBrewer` para criação da 
+paleta de cores, mais opções no [R](#R).
+`stringr` para manipulação de textos e `maptool` para manipulação de 
+objetos espaciais.
+
+
+```{r, eval = FALSE, echo = TRUE}
+require(rgdal) 
+require(classInt) 
+require(RColorBrewer) 
+require(stringr) 
+require(maptools) 
+```
+
+```{r,include = FALSE}
+require(rgdal) # Leitura de arquivos shapefile
+require(classInt) # Criação de legendas, todas as que citei, se encontrarm neste pacote
+require(RColorBrewer) # Paleta de cores Não existem somente este tipo de paleta, confira mais opçõem em
+# https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf
+require(stringr) # Manipulação de textos 
+require(maptools) # Manipulação de objetos espaciais
+require(knitr)
+setwd("/home/gabriel/posts/")
+```
+### Leitura do Banco de Dados Espacial
+
+Para ler o banco de dados espaciais, precisamos que os arquivos (shp, shx e dbf)
+esteja no mesmo diretório. Quando baixar no IBGE, outros quatro arquivos 
+estarão acoplados, porém somente os três que citei são necessários. 
+Salvaremos no o banco de dados espacias na variável sc utilizando a 
+função `readOGR`. O resultado mostra que tem 293 municípios com nove
+variáveis. 
+
+
+```{r, engine = 'sh', echo = FALSE}
+cd Mapa
+tree
+```
+
+
+```{r}
+sc <- readOGR(dsn = "./Mapa",
+              layer = "42mu2500gsd",
+              encoding = "latin1" # Codificação para os caracteres especiais
+              )
+```
+
+
+```{r, eval = FALSE}
+plot(sc)
+```
+![Mapa_Bruto][8]
+
+Temos já a visualização do mapa, porém sem o preenchimento dos respectivos atributos. 
+Antes de dar sequência na moldagem do mapa temático. Vale expor a estrutura do 
+objeto `sc`, um *spatial* *polygons* *dataframe*, é uma base de dados com 
+variáveis e localizações espaciais embutida. Mais precisamente é um dos objetos pertencentes a 
+classe S4, que são desenvolvidos e estruturados em slots. Os slots podem ser acessados, 
+através da função `slotNames` geralmente verifica-se cinco slots, dos quais `data` pertence 
+as variáveis não espaciais, como nome do município. `polygons` são as coordenadas geográficas 
+do municípios. `plotOrder`, apenas a ordem de plotagem dos municípios. `bbox`, 
+é a escala do mapa nos eixos x e y. `proj4srting`, é sistema de referencial geográfico. Para selecionar utilize o comando`@`.
+
+```{r}
+class(sc) 
+slotNames(sc) 
+# head(sc@data)
+# head(sc@polygons, 1)
+# sc@bbox
+# sc@plotOrder
+# sc@proj4string
+```
+
+### Leitura do Arquivo de Analfabetismo
+
+Vamos partir agora para os dados da taxa de analfabetismo, que está no formato 
+`dataframe`. Nesta seção, primeiramente iremos visualizar a distribuição da 
+porcentagem do alfabetismo para escolha da distância de classe e quantidade. 
+Posteriormente iremos criar o mapa, emparelhando o arquivo dos dados espaciais 
+(`sc`) com o arquivo de dados da porcentagem de analfabetismo (`analfa`).
+
+```{r, eval = TRUE}
+analfa <- read.table("Mapa/analfabeto.txt", header = TRUE, sep = ";", dec= ",")
+names(analfa)[2] <- "taxa"
+```
+
+
+```{r, echo = TRUE, fig.align= "center", eval = FALSE}
+hist(analfa[,2], xlab = "Porcentagem de Analfabetismo", ylab = "Frequência", 
+     main = "Histograma da Porcentagem de Analfabetismo")
+```
+![Histograma][9]
+
+Verifica-se no histograma, uma assimetria a direita, logo é recomendado usar a 
+distância de classes pelo método de k-means. Adicionalmente podemos classificar 
+em 3 categorias. Oque intuitivamente sugerem que as classes podem ser interpretadas 
+como baixo, regular e alto. 
+
+### Emparelhando Bases de Dados
+
+Relembrando, temos a definição de qual classe de cor usar (Sequencial), 
+qual cor usar (Vermelho) e a legenda (*K-means*), iremos gerar o mapa. 
+Agora precisamos emparelhar as duas bases de dados. Para isso é necessário que 
+as variáveis (`sc`) e (`analfa`) possuam uma variável em comum. A tabela abaixo 
+representa as variáveis dos 6 primeiros indivíduos, nas duas bases. Verifica-se que
+ambos tem o nome do município, porém na variável *analfa* está na mesma coluna. 
+Faremos o uso rápido de técnicas de manipulação de variáveis para separar.
+
+
+```{r, results= "asis", echo = FALSE, eval = FALSE}
+kable(head(analfa))
+```
+
+|Município               | taxa|
+|:-----------------------|----:|
+|420005 Abdon Batista    | 10.8|
+|420010 Abelardo Luz     | 11.4|
+|420020 Agrolândia       |  5.6|
+|420030 Agronômica       |  4.9|
+|420040 Água Doce        |  6.3|
+|420050 Águas de Chapecó |  7.1|
+
+```{r, results= "asis", echo = FALSE, eval = FALSE}
+# names(sc@data)
+```
+
+| GEOCODIG_M|UF |Sigla |Nome_Munic       |Região |Mesorregiã |Nome_Meso         |Microrregi |Nome_Micro  |
+|----------:|:--|:-----|:----------------|:------|:----------|:-----------------|:----------|:-----------|
+|    4200051|42 |SC    |Abdon Batista    |Sul    |4203       |Serrana           |42009      |Curitibanos |
+|    4200101|42 |SC    |Abelardo Luz     |Sul    |4201       |Oeste Catarinense |42003      |Xanxerê     |
+|    4200200|42 |SC    |Agrolândia       |Sul    |4204       |Vale do Itajaí    |42014      |Ituporanga  |
+|    4200309|42 |SC    |Agronômica       |Sul    |4204       |Vale do Itajaí    |42011      |Rio do Sul  |
+|    4200408|42 |SC    |Água Doce        |Sul    |4201       |Oeste Catarinense |42004      |Joaçaba     |
+|    4200507|42 |SC    |Águas de Chapecó |Sul    |4201       |Oeste Catarinense |42002      |Chapecó     |
+
+```{r}
+# Separando Variáveis
+analfa$cod <- as.numeric(str_extract(analfa[,1], "[0-9]+")) # Somente código
+analfa$mun <- as.character(str_extract(analfa[,1], '[^[0-9] ](.)*')) # Somente município
+
+# Retirando a coluna agrupada de código e município
+analfa <- analfa[,-1] 
+analfa[,1] <- as.numeric(analfa[,1])
+
+# Agora que os dados estão corretos, começa o processo de emparelhamento. 
+# Os nomes das linhas do objeto espacial (sc) será identificado pelo nome do município.
+row.names(sc) <- as.character(sc@data$Nome_Munic)
+
+# Os nomes das linhas da variável analfabetismo (analfa) será identificado pelo nome do município.
+row.names(analfa) <- analfa$mun
+
+# Precisamos organizar a ordem do atributo município nas variáveis (sc) e (analfa)
+ind <- match(as.character(sc@data$Nome_Munic), analfa$mun)
+
+# Forçando que a variável (analfa) esteja na mesma ordem que o (sc)
+analfa <- analfa[ind,]
+
+# Juntandos as variáveis, (sc) e (analfa) 
+sc_analfa <- spCbind(sc, analfa)
+
+# Certificando que estão na mesma ordem
+sum(sc_analfa$mun == sc_analfa@data$Nome_Munic) # TRUE
+```
+
+```{r}
+names(sc_analfa@data)
+```
+
+Verifique que agora em no mesmo banco de dados `sc_analfa` está a 
+localização geográfica e a taxa de anlafabetismo. Repare que também que
+algumas variáveis estão em duplicata, como o nome do município e o código. 
+Se for necessário a retire. Partiremos para a criação do mapa, o *script* abaixo destaca as etapas 
+discutidas anteriormente para escolha das cores e legenda. Fique livre para alterar, 
+modificando os argumentos das funções. Como diversão de *help* na função `classintervals`
+alterando o argumento `style` e veja o resultado !
+
+
+```{r, eval = FALSE}
+## Construindo Mapa
+INT <- classIntervals(sc_analfa@data$Taxa.de.analfabetismo, # Variável de interese  
+                      n = 3, # Separando em 3 classes
+                      style = "kmeans") # Utilizando o método de k-means
+
+CORES.5 <- brewer.pal(3, # 3 Tons de vermelho
+                      "Reds") # Gradiente de vermelho sequencial
+
+COL <- findColours(INT, CORES.5) # Atribuindo para as legendas as respectivas cores
+plot(sc, col=COL) 
+title("Porcentagem de Analfabetismo em Santa Catarina - 2010") 
+
+TB <- attr(COL, "table") # Selecionando a tabela da legenda com a contagem de municípios
+legtext <- paste(names(TB), # Distâncias das classes
+                 " (", TB, ")", sep = "") # Adicionando a contagem dos municípios nas classes
+
+legend("bottomleft", # Colocando a legenda no canto inferior
+       fill = attr(COL, "palette"), # Preenchendo as cores nas classes
+       legend = legtext, # Distâncias das classes
+       bty = "n", # Sem borda na legenda
+       ncol = 1) # As distâncias estarã disposta numa única coluna
+
+```
+
+![Mapa_Tematico][10]
+
+Mapa Feito !!! Difícil? Visualize o mapa da distribuição espacial da 
+porcentagem de analfabetismo em Santa Catarina. Repare que os índice vão piorando
+do litoral norte para o centro e oeste. Também verifica-se algo recorrente, 
+há municípios próximos nas mesmas classes, o que identificaria um efeito espacial 
+para este índice mas estas análises ficam para os próximos posts. 
+
+**Obs.:** Poderíamos ter feito o mapa sem ter criado um banco de dados conjunto,
+apenas ordenado a variável `analfa`, mas se quisermos reproduzirmos o mapa novamente, teriamos
+refazer todo o processo de ordenar os dados, realizando processos computacionais superfluamente.
+
+```{r, eval = FALSE}
+writeSpatialShape(sc_analfa,
+                  "base_sc_analfa")
+```
+
+<!--  Links -->
+[1]: ftp://geoftp.ibge.gov.br/malhas_digitais/municipio_2010/sc/        "IBGE"
+[2]: http://www2.datasus.gov.br/DATASUS/index.php?area=0206    "DataSUS"
+[3]: https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf  "shapefile"
+[4]: https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf "R"
+[5]: figures/seq.png  "Sequencial"
+[6]: figures/quali.png  "Qualitativa"
+[7]: figures/diver.png  "Divergente"
+[8]: figures/mapa_bruto.png  "Mapa_Bruto"
+[9]: figures/histograma.png  "Histograma"
+[10]: figures/mapa_tematico.png  "Mapa_Tematico"

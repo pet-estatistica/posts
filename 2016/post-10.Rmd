@@ -1,0 +1,34 @@
+% Estatística aplicada à genética
+% Paula Alessandra Zeizer Dimas
+
+Há muitos problemas na genética que podem ser solucionados por 
+estatísticos bem preparados, desde planejamento de seus experimentos, 
+resolução a partir de modelos matemáticos para explicar seus dados, 
+e problemas decorrentes de grande quantidade de dados. As áreas mais
+aplicadas são Análise de dados de Microarranjo e RNA-sequencial. 
+Os dois tipos de dados atendem dois objetivos principais, analisar 
+níveis de expressão gênica e entender os diversos fenômenos encontrados
+em um organismo. 
+
+Expressão gênica é toda a informação contida no processo antes e durante
+a síntese de proteína ou RNA. O Microarranjo permite avaliar a expressão
+gênica de centenas ou milhares de genes em uma amostra, já o 
+RNA-sequencial permite uma avaliação mais detalhada do mesmo processo,
+por isso a importância do estudo dos dados coletados por esses métodos. 
+
+O Estatístico que preferir se aprofundar nesse tema perceberá que a
+área é recente e possui um campo vasto e pouco explorado. O profissional
+não atuará apenas na área de estatística e bioquímica, mas também em 
+bioinformática. As habilidades que serão adquiridas no processo deste 
+estudo também estão relacionadas a conhecimentos computacionais que o 
+ajudarão no problema da imensa quantidade de dados. A Universidade 
+Federal do Paraná dispõe da tecnologia de RNA-sequencial que possui 
+uma metodologia de alta produção, alta resolução e baixo custo, 
+portanto, o graduando que buscar conhecimento nesta área poderá 
+aplicá-lo constantemente em problemáticas de ciências biológicas. 
+
+Consoante os fatos, é importante ressaltar que o interesse nessa área 
+é bem visto no Brasil e principalmente no exterior. É de extrema 
+necessidade e importância profissionais aptos a trabalhar nas três 
+áreas, genética, estatística e bioinformática. O campo é amplo, 
+recente, pouco explorado e muito interessante.

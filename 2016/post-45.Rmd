@@ -1,0 +1,88 @@
+% Usando RMarkdown com Modelos Definidos em LaTeX
+% Walmes Zeviani
+
+O LaTeX é uma linguagem de marcação repleta de recursos. Os documentos
+produzidos com o LaTeX tem uma tipografia excelente, principalmente com
+relação à escrita matemática, como equações, letras gregas e símbolos
+matemáticos. Por ser uma linguagem, com o LaTeX pode-se fazer
+praticamente de tudo. Ele é usado principalmente para escrita de artigos
+científicos e livros, mas também possui recursos para produzir
+slides, banners, desenhos vetoriais e até tabuleiros de xadrez.
+
+A quantidade de recursos disponíveis, porém, tem um custo: a curva de
+aprendizado tem uma baixa inclinação, ou seja, não se domina o LaTeX da
+noite para o dia. É normal os usuários iniciantes se frustarem com os
+erros de compilação e a necessidade de programação para configurar o
+estilo do documento (e.g. margens, espaçamento, fonte e tamanho).
+
+O Markdown é uma linguagem de marcação leve. Diferente do LaTeX, o
+markdown define apenas alguns ambientes, como itálico, negrito e
+sublinhado, hiperlinks, tabelas, seções, subseções, etc. Por exemplo, no
+markdown não existe um ambiente para centralizar ou alinhar à direita o
+texto. Mas os seus recursos reduzidos têm uma vantagem: você pode focar 
+no conteúdo sem perder tempo com edição de estética e são mínimos os
+erros de compilação.
+
+Falado sobre os dois, existe também a opção mista que é usar o LaTeX e o
+markdown juntos. Eles terão papeis bem claros: o markdown terá o
+conteúdo e o LaTeX definirá a estética. Veremos isso em dois exemplos
+didáticos simples.
+
+O primeiro exemplo ilustra a produção de resumos para uma conferência. O
+resumo é escrito em markdown no arquivo `resumo.Rmd`. Nos metadados, são
+definidos o título, autor(es) e palavras chave. No corpo, o resumo
+propriamente dito. Esse é o resumo da minha
+[Tese de Doutorado](http://www.leg.ufpr.br/~walmes/docs/WalmesTese.pdf).
+
+```{r, echo = FALSE, comment = NA, message = FALSE, warning = FALSE}
+cat(readLines("post-45/resumo.Rmd"), sep = "\n")
+```
+
+No arquivo `resumo_template.tex`, os pacotes LaTeX e definições
+estéticas são feitas. As palavras cercadas de dólar (`$`) são colocados
+no lugar para dar o resultado desejado. O único detalhe é que `$body$`
+não foi definido por nós pois é se refere ao corpo do documento
+markdown.
+
+```{r, echo = FALSE, comment = NA, message = FALSE, warning = FALSE}
+cat(readLines("post-45/resumo_template.tex"), sep = "\n")
+```
+
+A compilação do arquivo `resumo.Rmd` é feita com a função
+`rmarkdown::render()`.
+
+```{r, eval = FALSE}
+rmarkdown::render("post-45/resumo.Rmd")
+```
+
+O outro exemplo é uma carta (`marta.md`). Foi usado um modelo de carta
+de amor:
+<http://www.blogodorium.com.br/modelos-de-lindas-cartas-de-namoro-para-o-seu-amor/>.
+Apenas coloquei o texto no arquivo `carta.Rmd` e preenchi de forma
+genérica os metadados para termos um resultado.
+
+```{r, echo = FALSE, comment = NA, message = FALSE, warning = FALSE}
+cat(readLines("post-45/carta.md"), sep = "\n")
+```
+
+No arquivo `carta_template.tex` temos as definições de estética do
+documento. Aqui está sendo usada a classe de documento `letter` e a
+fonte Calligra que estilo texto escrito à mão.
+
+```{r, echo = FALSE, comment = NA, message = FALSE, warning = FALSE}
+cat(readLines("post-45/carta_template.tex"), sep = "\n")
+```
+
+Ao contrário do exemplo anterior, não usamos um documento Rmarkdown mas
+apenas markdown. O primeiro poderia ser apenas markdown já que não
+contém ambiente de código (*chunks*) ou código em linha.
+
+```{r, eval = FALSE}
+rmarkdown::render("carta.md")
+```
+
+A utilidade de usar markdown e LaTeX ao mesmo tempo é combinar as
+vantagens de ambos. O markdown é um documento de simples edição. O
+texto, embora possua as marcações, permanece legível. O LaTeX é cheio de
+recursos mas não vamos lidar com ele o tempo todo. (Basta definir o
+template que o LaTeX para ser segundo plano.) n entendi essa frase
